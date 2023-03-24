@@ -1,0 +1,24 @@
+#!/bin/bash
+
+path="Dataset/"
+num_carpetas=$(ls -l $path | grep "^d" | wc -l)
+
+for n in $(seq 0 $((num_carpetas-1))); 
+do
+    folder_name="Fuente${n}" # nombre de la carpeta
+    echo "Iterando en la carpeta $folder_name"
+    i=0 # contador
+    # Iterar a través de los archivos JSON en la carpeta actual
+    for file in "${path}${folder_name}"/*.jpg; do
+        echo "Procesando el archivo $file"
+        # Añada aquí el código para procesar el archivo
+        if [[ $file == *".jpg" ]]; then
+            echo "Editando el archivo $file"
+            echo "Renombrando el archivo $file"
+            cp "$file" "${file%.*}_${n}.${file##*.}"
+            mv "${file%.*}_${n}.${file##*.}" "modified_json"
+            i=$((i+1)) # Incrementar el contador
+        fi
+    done
+done
+./run2
