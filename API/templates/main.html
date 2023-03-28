@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Subir Imagen</title>
+  </head>
+  <body>
+    <h1>Subir Imagen</h1>
+    <form method="POST" enctype="multipart/form-data" action="{{ url_for('subir_imagen') }}">
+      <input type="file" name="userfile" required>
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>
