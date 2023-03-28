@@ -14,7 +14,7 @@ load_dotenv()
 
 endpoint = os.getenv("AZURE_FORM_RECOGNIZER_ENDPOINT")
 key = os.getenv("AZURE_FORM_RECOGNIZER_KEY")
-model_id = "model2_test"
+model_id = "Model4"
 formUrl = "https://github.com/aratan/Azure-OCR/blob/adfe9d0db7be28cda624e9ea1370d84a67779627/parte_amistoso_0.jpg?raw=true"
 
 document_analysis_client = DocumentAnalysisClient(endpoint=endpoint, credential=AzureKeyCredential(key))
@@ -64,7 +64,6 @@ for idx, document in enumerate(result.documents):
                 )
             )
     print("-----------------------------------")
-
 
 n = 0;
 diccionario = {}

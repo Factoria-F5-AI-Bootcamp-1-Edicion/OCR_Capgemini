@@ -12,12 +12,12 @@ connect_str = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
 blob_service_client = BlobServiceClient.from_connection_string(connect_str)
 
 # Crea un nombre unico para el contenedor
-container_name = "datos"
+container_name = "prueba"
 # Crea el contenedor en la cuenta de almacenamiento
 container_client = blob_service_client.create_container(container_name)
 
 # Se especifica la ruta de la carpeta que contiene las imágenes a subir
-folder_path = "<ruta-de-la-carpeta>"
+folder_path = "/sysroot/home/andreasandoval/Documentos/BOOTCAMP_F5/OCR/OCR_Capgemini/Prueba/Renombrar/jsons_10"
 
 # Se imprime el mensaje de confirmación
 print(f"El contenedor {container_name} se ha creado correctamente.")
