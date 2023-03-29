@@ -39,6 +39,8 @@ for field in datos['fields']:
         if len(partes) == 2:
             clave, valor = partes
             diccionario[clave.strip()] = valor.strip()
+        elif len(partes) == 3:
+            diccionario[partes[0].strip()] = partes[1].strip()
 
     lista_diccionario[field] = diccionario
     # Escribir la lista de diccionarios en un archivo JSON
