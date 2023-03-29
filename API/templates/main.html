@@ -2,12 +2,49 @@
 <html>
   <head>
     <title>Subir Imagen</title>
+    <!-- Se agrega el archivo CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+      h1 {
+        color: #4CAF50;
+        text-align: center;
+        margin-top: 50px;
+      }
+      form {
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px #C1C1C1;
+      }
+      input[type="file"] {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 20px;
+      }
+      button[type="submit"], button[type="reset"] {
+        transition: background-color 0.3s ease;
+      }
+      button[type="submit"]:hover, button[type="reset"]:hover {
+        background-color: #3E8E41;
+      }
+    </style>
   </head>
-  <body>
-    <h1>Subir Imagen</h1>
-    <form method="POST" enctype="multipart/form-data" action="{{ url_for('subir_imagen') }}">
-      <input type="file" name="userfile" required>
-      <button type="submit">Enviar</button>
-    </form>
+  <body class="bg-light"> <!-- Clase para el fondo de pantalla -->
+    <div class="container">
+      <h1>Subir Imagen</h1>
+      <form method="POST" enctype="multipart/form-data" action="{{ url_for('subir_imagen') }}">
+        <input type="file" name="userfile" required>
+        <button type="submit" class="btn btn-outline-primary">Enviar</button> <!-- Agrega las clases de Bootstrap para los botones -->
+        <button type="reset" class="btn btn-outline-secondary">Limpiar</button>
+      </form>
+    </div>
+    <!-- Agrega los archivos JS de Bootstrap al final del cuerpo del documento -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </body>
 </html>
+
+

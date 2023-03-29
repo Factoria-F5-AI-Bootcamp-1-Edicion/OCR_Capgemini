@@ -31,7 +31,7 @@ def hello():
     return render_template("main.html")
 
 # Definir la ruta para procesar la imagen y devolver el archivo JSON
-@app.route('/submit', methods=['POST'])
+@app.route('/analize_image', methods=['POST'])
 def subir_imagen():
 
     if request.method == 'POST':
@@ -70,9 +70,11 @@ def subir_imagen():
             "fields": {name: field.value if field.value else field.content for name, field in document.fields.items()}
         }
 
-        # Convertir el diccionario en un objeto JSON usando jsonify()
-        return jsonify(json_data)
+        # Convertir el diccionario en un objeto JSON con formato legible
+        pretty_json = json.dumps(json_data, indent=4)
 
+        # Enviar el JSON como respuesta
+        return jsonify(pretty_json)
 
 if __name__ == "__main__":
     app.run()
