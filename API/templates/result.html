@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Resultado del OCR</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+      body {
+        background-color: #f8f9fa;
+        margin-top: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .container {
+        max-width: 3000px;
+      }
+      .resultados {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+        margin-bottom: 30px;
+      }
+      h1 {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 30px;
+      }
+      h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #87CEFA; /* código hexadecimal del color celeste pastel */
+      }
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+      .btn-descarga {
+        font-size: 16px;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-info text-light py-3">
+      <div class="container">
+        <h1>Proyecto de extracción de datos con Azure</h1>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-8">
+          <div class="resultados">
+            <h2>JSON: </h2>
+            <pre>{{ json_data|safe }}</pre>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-8 mt-3 d-flex justify-content-end">
+          <form action="{{ url_for('download') }}" method="POST">
+            <input type="hidden" name="json_str" value="{{ json_data }}">
+            <button type="submit" class="btn btn-outline-primary btn-descarga"><i class="fa fa-download"></i> Descargar json</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-info text-light py-2">
+      <div class="container">
+        <p>&copy; 2023 Proyecto de extracción de datos con Azure</p>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
+
