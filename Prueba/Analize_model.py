@@ -51,12 +51,13 @@ for document in result.documents:
 try:
     data = jsonlint.ValidationError(diccionario)
     print("\n El JSON es válido/reparado:", data)
+ 
 
 except json.JSONDecodeError as err:
     print("\n El JSON no es válido:" + str(err))
 
     # print(data)
-    
+   
 ## Llamamos a la funcion para realizar el parseo
 function_json_parsing(diccionario)
 

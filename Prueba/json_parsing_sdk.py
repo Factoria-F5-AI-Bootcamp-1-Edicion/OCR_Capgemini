@@ -1,3 +1,4 @@
+import os
 import json
 import re
 
@@ -24,7 +25,7 @@ def extraer_content(campo_buscado):
     
 
 def function_json_parsing(datos):
-    
+    print("Holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
     # Abrir el archivo JSON en modo de lectura
     if(datos == None):
         function_load_json("result_1_test.json")
@@ -54,9 +55,12 @@ def function_json_parsing(datos):
                     diccionario[partes[0].strip()] = partes[1].strip()
 
         lista_diccionario[k] = diccionario
-        # Escribir la lista de diccionarios en un archivo JSON
-        with open("result_test_sdk_2.json", "w") as archivo_json:
-            json.dump(lista_diccionario, archivo_json)
+
+    print("Holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+        ## Creamos el archivo json donde se guarda el resultado 
+    with open("result_test_sdk_2.json", "w") as archivo_json:
+        json.dump(lista_diccionario, archivo_json)
+
 
 
     # Mostrar el diccionario resultante
