@@ -44,7 +44,7 @@ for field in datos['fields']:
 
     lista_diccionario[field] = diccionario
     # Escribir la lista de diccionarios en un archivo JSON
-    with open("lista_diccionario.json", "w") as archivo_json:
+    with open("result_test_studio.json", "w") as archivo_json:
         json.dump(lista_diccionario, archivo_json)
 
 

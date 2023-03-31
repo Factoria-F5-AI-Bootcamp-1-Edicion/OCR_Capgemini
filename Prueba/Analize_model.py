@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from azure.ai.formrecognizer import DocumentAnalysisClient
 from azure.core.credentials import AzureKeyCredential
 from azure.storage.blob import BlobServiceClient, BlobClient
+from json_parsing_sdk import function_json_parsing           #Llamamos a la fuction_json_parsing
 
 
 # Carga las variables de entorno desde el archivo .env
@@ -40,7 +41,8 @@ diccionario = {}
 for document in result.documents:
     n += 1
     for name, field in document.fields.items():
-        field_value = field.value if field.value else field.content
+        #field_value = field.value if field.value else field.content
+        field_value = field.content
         # convertir el valor a una cadena si no es una cadena
         if not isinstance(field_value, str):
             field_value = str(field_value)
@@ -54,8 +56,12 @@ except json.JSONDecodeError as err:
     print("\n El JSON no es válido:" + str(err))
 
     # print(data)
+    
+## Llamamos a la funcion para realizar el parseo
+function_json_parsing(diccionario)
 
 print("----------------------------------------")
-
-with open("result_1.json", "w") as archivo_json:
+'''
+with open("result_1_test.json", "w") as archivo_json:
     json.dump(diccionario, archivo_json, ensure_ascii=False, sort_keys=True, indent=4 )
+'''
