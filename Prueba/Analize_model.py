@@ -1,4 +1,4 @@
-#Librerias
+# Librerias
 import json
 import os
 import jsonlint
@@ -6,8 +6,7 @@ from dotenv import load_dotenv
 from azure.ai.formrecognizer import DocumentAnalysisClient
 from azure.core.credentials import AzureKeyCredential
 from azure.storage.blob import BlobServiceClient, BlobClient
-from json_parsing_sdk import function_json_parsing           #Llamamos a la fuction_json_parsing
-
+from json_parsing_sdk import function_json_parsing  # Llamamos a la fuction_json_parsing
 
 # Carga las variables de entorno desde el archivo .env
 load_dotenv()
@@ -31,9 +30,8 @@ for idx, document in enumerate(result.documents):
     for name, field in document.fields.items():
         field_value = field.value if field.value else field.content
         print("......found field of type '{}' with value '{}' and with confidence {}".format(field.value_type,
-                                                                                                 field_value,
-                                                                                                 field.confidence))
-
+                                                                                             field_value,
+                                                                                             field.confidence))
 
 n = 0;
 diccionario = {}
@@ -41,7 +39,7 @@ diccionario = {}
 for document in result.documents:
     n += 1
     for name, field in document.fields.items():
-        #field_value = field.value if field.value else field.content
+        # field_value = field.value if field.value else field.content
         field_value = field.content
         # convertir el valor a una cadena si no es una cadena
         if not isinstance(field_value, str):
@@ -51,18 +49,17 @@ for document in result.documents:
 try:
     data = jsonlint.ValidationError(diccionario)
     print("\n El JSON es válido/reparado:", data)
- 
 
 except json.JSONDecodeError as err:
     print("\n El JSON no es válido:" + str(err))
 
-    # print(data)
-   
-## Llamamos a la funcion para realizar el parseo
+
+# Llamamos a la function para realizar el parseo
 function_json_parsing(diccionario)
 
-print("----------------------------------------")
 '''
-with open("result_1_test.json", "w") as archivo_json:
+# Nombrar el archivo JSON generado con el nombre del archivo de imagen de entrada
+output_filename = f"{name}.json"
+with open(output_filename, "w") as archivo_json:
     json.dump(diccionario, archivo_json, ensure_ascii=False, sort_keys=True, indent=4 )
 '''
