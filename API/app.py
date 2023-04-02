@@ -9,6 +9,7 @@ from azure.ai.formrecognizer import DocumentModelAdministrationClient
 from azure.core.credentials import AzureKeyCredential
 from werkzeug.utils import secure_filename
 from azure.ai.formrecognizer import DocumentAnalysisClient
+from json_parsing_sdk import function_json_parsing
 
 # Carga las variables de entorno desde el archivo .env
 load_dotenv()
@@ -72,7 +73,8 @@ def subir_imagen():
         for document in result.documents:
             n += 1
             for name, field in document.fields.items():
-                field_value = field.value if field.value else field.content
+                # field_value = field.value if field.value else field.content
+                field_value = field.content
                 # convertir el valor a una cadena si no es una cadena
                 if not isinstance(field_value, str):
                     field_value = str(field_value)
@@ -85,27 +87,29 @@ def subir_imagen():
         except json.JSONDecodeError as err:
             print("\n El JSON no es válido:" + str(err))
 
-            # print(data)
-
-        print("----------------------------------------")
+        # Llamamos a la function para realizar el parseo
+        data = function_json_parsing(diccionario)
 
         # Serializar el objeto a JSON con opciones personalizadas
-        json_str = json.dumps(diccionario, ensure_ascii=False, sort_keys=True, indent=4)
+        json_str = json.dumps(data, ensure_ascii=False, sort_keys=True, indent=4)
 
-        # Renderizar la plantilla * con el JSON serializado
-        return render_template('result.html', json_data=json_str)
+    # Renderizar la plantilla * con el JSON serializado
+    return render_template('result.html', json_data=json_str)
 
 
 # Se define la ruta para descargar el archivo JSON generado
 @app.route('/download', methods=['POST'])
 def download():
+    n = 0;
+    n += 1
     json_str = request.form['json_str']
+    nombre_archivo = request.form.get('nombre_archivo', f'parte{n}')
+    nombre_archivo_json = f"{nombre_archivo}.json"
 
     # Crear un archivo temporal para almacenar el JSON
     with tempfile.NamedTemporaryFile(delete=False, suffix='.json') as tmp:
         tmp.write(json_str.encode('utf-8'))
-        nombre_archivo, _ = os.path.splitext(os.path.basename(tmp.name))
-        nombre_archivo_json = nombre_archivo + ".json"
+
 
     # Crear una respuesta para enviar el archivo
     response = make_response(send_file(tmp.name, as_attachment=True))
@@ -117,8 +121,5 @@ def download():
     return response
 
 
-
-
-
 if __name__ == '__main__':
-    app.run(port=5001)
+    app.run()
