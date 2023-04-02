@@ -4,6 +4,7 @@
 #Exception files
 .idea
 /API/Images
+/API/parte_test.jpg
 Prueba/Renombrar/Dataset
 
 #Python
