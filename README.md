@@ -1,28 +1,33 @@
-<h1 align="center">
-  <p align="left">OCR con Azure Form Recognizer</p>
-  <img align="center" width="950" height="300" src="">
-</h1>
+## Proyecto de Reconocimiento Óptico de Caracteres con Form Recognizer de Azure
 
-Este proyecto tiene como objetivo implementar una solución de reconocimiento óptico de caracteres (OCR) utilizando Azure Form Recognizer.
+![OCR de partes de coches(1)](https://user-images.githubusercontent.com/108665291/229485641-469dbf9a-99f3-4a23-b34d-306007968ab9.jpg)
+
+
+El objetivo principal del proyecto es crear una solución tecnológica que permita a la empresa SEGUROS SL optimizar la entrada y distribución de documentación, mediante el desarrollo de capacidades de reconocimiento de texto, con el fin de automatizar la extracción de información y los procesos asociados a ella. El proyecto busca mejorar la gestión de documentos y la transformación digital de la organización, centrando la actividad en el cliente y utilizando la inteligencia artificial para extraer información de los documentos de manera automatizada.
 
 #
 ## Nosotros 🔮
+Somos un grupo de estudiantes de Factoría F5 y estamos emocionados de presentar nuestro proyecto final pedagógico para la empresa líder en consultoría y servicios tecnológicos, Capgemini.
+Nuestro proyecto final, utiliza nuestra experiencia en IA y aprendizaje automático para abordar un problema empresarial clave de Seguros SL. Nuestra solución es innovadora, eficiente y diseñada específicamente para satisfacer las necesidades de la empresa.
+
 #
+
 Intentamos seguir practicas eticas basandonos en:
 
-- **Responsabilidad:** Este equipo OCR_Capgemini se compromete a utilizar la IA de manera responsable y ética. La empresa ha desarrollado un marco de principios de IA que establece los valores y las prácticas éticas que guían el desarrollo y el uso de la tecnología de la IA.
+- **Responsabilidad:** Este equipo se compromete a utilizar la IA de manera responsable y ética. Hemos desarrollado un marco de principios de IA que establece los valores y las prácticas éticas que guían el desarrollo y el uso de la tecnología de la IA.
 
-- **Transparencia:** Este equipo OCR_Capgemini se esfuerza por ser transparente en cuanto a cómo se desarrolla y se utiliza la IA. La empresa ha desarrollado herramientas y procesos para ayudar a los clientes a comprender cómo se utilizan sus datos y cómo se toman las decisiones con la IA.
+- **Transparencia:** Este equipo se esfuerza por ser transparente en cuanto a cómo se desarrolla y se utiliza la IA. La empresa ha desarrollado herramientas y procesos para ayudar a los clientes a comprender cómo se utilizan sus datos y cómo se toman las decisiones con la IA.
 
-- **Explicabilidad:** Este equipo OCR_Capgemini se compromete a proporcionar explicaciones claras y comprensibles sobre cómo se toman las decisiones con la IA. La empresa ha desarrollado herramientas y procesos para ayudar a los clientes a entender el proceso de toma de decisiones de la IA.
+- **Explicabilidad:** Este equipo se compromete a proporcionar explicaciones claras y comprensibles sobre cómo se toman las decisiones con la IA. La empresa ha desarrollado herramientas y procesos para ayudar a los clientes a entender el proceso de toma de decisiones de la IA.
 
-- **Privacidad y seguridad:** Este equipo OCR_Capgemini se preocupa por la privacidad y la seguridad de los datos de los clientes. La empresa ha desarrollado políticas y prácticas de privacidad y seguridad para garantizar que los datos de los clientes estén protegidos y que se cumplan las normas y regulaciones de privacidad aplicables.
+- **Privacidad y seguridad:** Este equipo se preocupa por la privacidad y la seguridad de los datos de los clientes. La empresa ha desarrollado políticas y prácticas de privacidad y seguridad para garantizar que los datos de los clientes estén protegidos y que se cumplan las normas y regulaciones de privacidad aplicables.
 
-- **Diversidad e inclusión:** Este equipo OCR_Capgemini se esfuerza por garantizar que la IA sea justa e inclusiva. La empresa ha desarrollado herramientas y procesos para ayudar a identificar y mitigar los sesgos en los sistemas de IA y para garantizar que la tecnología sea accesible para todos.
+- **Diversidad e inclusión:** Este equipo se esfuerza por garantizar que la IA sea justa e inclusiva. La empresa ha desarrollado herramientas y procesos para ayudar a identificar y mitigar los sesgos en los sistemas de IA y para garantizar que la tecnología sea accesible para todos.
 
 #
 ## Aplicación de partes de seguros de automóviles  💻 
 #
+
 
 <h1 align="center">
   <img align="center" width="950" height="450" src="https://user-images.githubusercontent.com/74676901/227197818-e0221aa9-42bf-4722-864f-e0c1e3934717.png">
@@ -34,18 +39,62 @@ Esta aplicación tiene como objetivo simplificar y mejorar el proceso de gestió
  - Estos archivos se subiran a un contenedor en una cuenta de almacenamiento de Azure (si no se encuentra creada, se debe crear).
  - Se crea el recurso Form Recognizer studio y se vincula al contenedor donde se guardaran los datos.
  - Se entrenará y creará un primer modelo de reconocimiento a partir de cinco imagenes (Form Recognizer Studio o con SDK de Python).
- - Y por ultimo de analiza el modelo entrenado con una imagen que no se encuentre en el contenedor.
+ - Y por ultimo se analiza el modelo entrenado con una imagen que no se encuentre en el contenedor.
+ - El resultado del análisis con el OCR , debe devolver un archico en formato Json con al información solicitada.
+#
+## 📁 Acceso al proyecto
+
+*Descarga el contenido del repositorio* >>  https://github.com/Factoria-F5-AI-Bootcamp-1-Edicion/OCR_Capgemini.git
+
+## 🛠️ Abre y ejecuta el proyecto
+
+1. Crea un entorno específicamente para este proyecto. Por ejemplo con conda 
+```
+conda create -n nombreEntorno
+```
+2. Dentro de este entorno será necesario instalar todas las librerias usadas, lo puedes hacer desde archivo :
+```
+requirements.txt
+```
+3. Crear una carpeta llamada *Images* en la misma ruta en la que se encuentra el servidor de la API
+```
+mkdir <ruta-de-la-carpeta>
+```
+4. Crear 2 archivos .env para almacenar las variables de entorno de la conexión con Form Recognizer, tanto en la ruta de la API como en la de SDK
+```
+touch .env 
+
+```
+5. Desde la terminal, situate en la carpeta que contiene los archivos de la API y desde allí ejecute
+```
+flask run 
+```
+6. Esto nos llevará al servidor de la API , donde podremos subir el documento que queremos analizar y nos permitirá descargar el json que se genera.
+
+![Captura desde 2023-04-03 13-16-13](https://user-images.githubusercontent.com/108665291/229494203-67fa85d8-8e67-4d04-9b65-5541ba339a0b.png)
+
+## 🤖 Testing de la API
+1. Para poder realizar el test debemos subir una imagen en la ruta donde se encuentra el archivo de testeo
+```
+ejemplo : parte_test.jpg
+```
+
+2. Para probar el test de la API, ejecurte:
+```
+pytest test_app.py
+```
+
 
 #
 ## Variables de Entorno requeridas
 Se debe crear un archivo `.env`, donde se configuren las variables de entorno necesarias y requeridas para la conexión segura a la base de datos y asegurar la externalización de datos sensibles.
 
-| Variable de entorno                | Descripción                          | Ejemplo                |
-|------------------------------------|--------------------------------------|------------------------|
-| `AZURE_FORM_RECOGNIZER_ENDPOINT`   | Endpoint del recurso de Recognizer   | `postgres`             |
-| `AZURE_FORM_RECOGNIZER_KEY`        | Key del recurso de Recognizer        | `postgres`             |
-| `CONTAINER_SAS_URL`                | SAS URL del contenedor               | `localhost`            |
-| `AZURE_STORAGE_CONNECTION_STRING`  | Cadena de conexion del contenedor    | `5432`                 |
+| Variable de entorno                | Descripción                          | 
+|------------------------------------|--------------------------------------|
+| `AZURE_FORM_RECOGNIZER_ENDPOINT`   | Endpoint del recurso de Recognizer   |
+| `AZURE_FORM_RECOGNIZER_KEY`        | Key del recurso de Recognizer        | 
+| `CONTAINER_SAS_URL`                | SAS URL del contenedor               | 
+| `AZURE_STORAGE_CONNECTION_STRING`  | Cadena de conexion del contenedor    | 
 
 #
 ### Tecnologías utilizadas 🛠️
@@ -61,12 +110,6 @@ Esta aplicación ha sido desarrollada utilizando las siguientes tecnologías:
     - Canva.
 
 #
-### Instalación 🤖
-
-
-1.  Clona este repositorio en tu máquina local.
-2.  Ejecuta `npm install` para instalar todas las dependencias necesarias.
-3.  Ejecuta `npm start` para iniciar la aplicación.
 
 #
 ### Contribuciones 📁
