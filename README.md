@@ -102,10 +102,20 @@ Se debe crear un archivo `.env`, donde se configuren las variables de entorno ne
 Esta aplicación ha sido desarrollada utilizando las siguientes tecnologías:
 
 - **Desarrollo:**
-    - SDK de Python
-    - Azure Form Recognizer
+    - SDK de cliente
+    - Form Recognizer Studio
     - Json
+    - Jsonlint
+    - Dotenv
     - Python
+ - **API:**
+    - Flask
+    - Pytest
+    - Unitest
+- **Front:**
+    -HTML
+    -CSS
+    -Bootstrap(framework de CSS)
 - **Presentación:**
     - Canva.
 
