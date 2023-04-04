@@ -1,4 +1,4 @@
-## Proyecto de Reconocimiento Óptico de Caracteres con Form Recognizer de Azure <img src="https://user-images.githubusercontent.com/108665291/229485641-469dbf9a-99f3-4a23-b34d-306007968ab9.jpg" width="1000px" align=lesft>
+<h1 align=center Proyecto de Reconocimiento Óptico de Caracteres con Form Recognizer de Azure></h1> <img src="https://user-images.githubusercontent.com/108665291/229485641-469dbf9a-99f3-4a23-b34d-306007968ab9.jpg" width="1000px" align=lesft>
 
 El objetivo principal del proyecto es crear una solución tecnológica que permita a la empresa SEGUROS SL optimizar la entrada y distribución de documentación, mediante el desarrollo de capacidades de reconocimiento de texto, con el fin de automatizar la extracción de información y los procesos asociados a ella. El proyecto busca mejorar la gestión de documentos y la transformación digital de la organización, centrando la actividad en el cliente y utilizando la inteligencia artificial para extraer información de los documentos de manera automatizada.
 
@@ -156,11 +156,13 @@ Si deseas contribuir a este proyecto, por favor sigue los siguientes pasos:
 
 #
 ## Participantes
-#
+
 Este proyecto ha sido desarrollado por los siguientes participantes:
 
 - Andrea Sandoval  👩‍💻
 - Anghi Sanchez  👩‍💻
 - Raúl Muñoz 👨‍💻
 - Víctor Arbiol 👨‍💻
+
+<p align=center Transforma la gestión de partes de seguros de automóviles con la inteligencia de Microsoft Azure Form Recognizer></p>
 
