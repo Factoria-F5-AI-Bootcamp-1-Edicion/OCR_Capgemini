@@ -98,20 +98,23 @@ Se debe crear un archivo `.env`, donde se configuren las variables de entorno ne
 
 
 ## 📁 Acceso a la aplicación con docker
-Docker facilita su despliegue y escalabilidad. 
+### Docker facilita su despliegue y escalabilidad. 
 
 El proceso de despliegue se puede usar junto con CD/CI, se puede usar con github jenkinns detectará 
 si hay algún cambio en la rama Main, disparando un script bash que genera la descarga del repositorio, 
 la creación del docker, su posterior subida a hub-docker conectada a azure, instances container.
 
-*Descarga el contenido de docker hub* 
-1, docker push systemdeveloper868/capgemini
+**Descarga el contenido de docker hub** 
 
-*Para lanzar la aplicacion en local:*
-2. docker run -d -p 8000:8000 systemdeveloper868/capgemini 
+docker push systemdeveloper868/capgemini
 
-*Para entrar en la aplicación por el navegador*
-3. http://172.17.0.4:8000/
+**Para lanzar la aplicacion en local:**
+
+docker run -d -p 8000:8000 systemdeveloper868/capgemini 
+
+**Para entrar en la aplicación por el navegador**
+
+http://172.17.0.4:8000/
 
 
 #
@@ -159,7 +162,7 @@ Este proyecto ha sido desarrollado por los siguientes participantes:
 - Andrea Sandoval  👩‍💻
 - Anghi Sanchez  👩‍💻
 - Raúl 👨‍💻
-- Víctor Arbiol👨‍💻
+- Víctor Arbiol 👨‍💻
 
 #
 ## Licencia
