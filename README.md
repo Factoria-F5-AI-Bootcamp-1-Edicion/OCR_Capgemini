@@ -1,12 +1,11 @@
-## Proyecto de Reconocimiento Óptico de Caracteres con Form Recognizer de Azure
-
-![OCR de partes de coches(1)](https://user-images.githubusercontent.com/108665291/229485641-469dbf9a-99f3-4a23-b34d-306007968ab9.jpg)
-
+## Proyecto de Reconocimiento Óptico de Caracteres con Form Recognizer de Azure <img src="https://user-images.githubusercontent.com/108665291/229485641-469dbf9a-99f3-4a23-b34d-306007968ab9.jpg" width="1000px" align=lesft>
 
 El objetivo principal del proyecto es crear una solución tecnológica que permita a la empresa SEGUROS SL optimizar la entrada y distribución de documentación, mediante el desarrollo de capacidades de reconocimiento de texto, con el fin de automatizar la extracción de información y los procesos asociados a ella. El proyecto busca mejorar la gestión de documentos y la transformación digital de la organización, centrando la actividad en el cliente y utilizando la inteligencia artificial para extraer información de los documentos de manera automatizada.
 
 #
 ## Nosotros 🔮
+<img src="https://user-images.githubusercontent.com/108665291/229771836-a117e07f-50d6-485a-8413-c39ac50fd341.png" width="400px" align=right>
+
 Somos un grupo de estudiantes de Factoría F5 y estamos emocionados de presentar nuestro proyecto final pedagógico para la empresa líder en consultoría y servicios tecnológicos, Capgemini.
 Nuestro proyecto final, utiliza nuestra experiencia en IA y aprendizaje automático para abordar un problema empresarial clave de Seguros SL. Nuestra solución es innovadora, eficiente y diseñada específicamente para satisfacer las necesidades de la empresa.
 
