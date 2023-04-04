@@ -17,7 +17,7 @@ load_dotenv()
 # Configurar el cliente de Form Recognizer
 endpoint = os.getenv("AZURE_FORM_RECOGNIZER_ENDPOINT")
 key = os.getenv("AZURE_FORM_RECOGNIZER_KEY")
-model_id = "model_1"
+model_id = "Model_neural"
 
 credential = AzureKeyCredential(key)
 document_model_admin_client = DocumentModelAdministrationClient(endpoint, credential)
@@ -77,7 +77,7 @@ def subir_imagen():
                 field_value = field.content
                 # convertir el valor a una cadena si no es una cadena
                 if not isinstance(field_value, str):
-                    field_value = str(field_value)
+                    field_value = json.dumps(field_value, ensure_ascii=False)
                 diccionario[name] = field_value
 
         try:
