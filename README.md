@@ -105,15 +105,13 @@ si hay algún cambio en la rama Main, disparando un script bash que genera la de
 la creación del docker, su posterior subida a hub-docker conectada a azure, instances container.
 
 *Descarga el contenido de docker hub* 
-
-docker push systemdeveloper868/capgemini
+1, docker push systemdeveloper868/capgemini
 
 *Para lanzar la aplicacion en local:*
-sudo docker run -d -p 8000:8000 systemdeveloper868/capgemini 
+2. docker run -d -p 8000:8000 systemdeveloper868/capgemini 
 
 *Para entrar en la aplicación por el navegador*
-
-http://172.17.0.4:8000/
+3. http://172.17.0.4:8000/
 
 
 #
