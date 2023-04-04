@@ -26,7 +26,7 @@ document_model_admin_client = DocumentModelAdministrationClient(endpoint, creden
 app = Flask(__name__)
 
 # Definir la ruta de la carpeta de subida
-app.config['UPLOAD_FOLDER'] = '/home/anghi/Documentos/PracticasF5/OCR_Capgemini/API/Images'
+app.config['UPLOAD_FOLDER'] = os.path.join(os.getcwd(), 'Images')
 
 
 @app.route('/')
@@ -36,7 +36,7 @@ def hello():
 # Definir la ruta para procesar la imagen y devolver el archivo JSON
 @app.route('/analize_image', methods=['POST'])
 def subir_imagen():
-    UPLOAD_FOLDER = "/home/anghi/Documentos/PracticasF5/OCR_Capgemini/API/Images"
+    UPLOAD_FOLDER = " os.path.join(os.getcwd(), 'Images')
 
     if request.method == 'POST':
 
