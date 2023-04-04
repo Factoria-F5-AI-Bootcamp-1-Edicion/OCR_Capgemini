@@ -9,7 +9,7 @@ El objetivo principal del proyecto es crear una solución tecnológica que permi
 Somos un grupo de estudiantes de Factoría F5 y estamos emocionados de presentar nuestro proyecto final pedagógico para la empresa líder en consultoría y servicios tecnológicos, Capgemini.
 Nuestro proyecto final, utiliza nuestra experiencia en IA y aprendizaje automático para abordar un problema empresarial clave de Seguros SL. Nuestra solución es innovadora, eficiente y diseñada específicamente para satisfacer las necesidades de la empresa.
 
-#
+
 
 Intentamos seguir practicas eticas basandonos en:
 
@@ -25,7 +25,7 @@ Intentamos seguir practicas eticas basandonos en:
 
 #
 ## Aplicación de partes de seguros de automóviles  💻 
-#
+
 
 
 <h1 align="center">
@@ -41,7 +41,7 @@ Esta aplicación tiene como objetivo simplificar y mejorar el proceso de gestió
  - Y por ultimo se analiza el modelo entrenado con una imagen que no se encuentre en el contenedor.
  - El resultado del análisis con el OCR , debe devolver un archico en formato Json con al información solicitada.
 #
-## 📁 Acceso al proyecto
+## Acceso al proyecto 📁
 
 *Descarga el contenido del repositorio* >>  https://github.com/Factoria-F5-AI-Bootcamp-1-Edicion/OCR_Capgemini.git
 
@@ -70,9 +70,11 @@ flask run
 ```
 6. Esto nos llevará al servidor de la API , donde podremos subir el documento que queremos analizar y nos permitirá descargar el json que se genera.
 
-![Captura desde 2023-04-03 13-16-13](https://user-images.githubusercontent.com/108665291/229494203-67fa85d8-8e67-4d04-9b65-5541ba339a0b.png)
+<h1 align="center">
+  <img align="center" width="350" height="200" src="https://user-images.githubusercontent.com/108665291/229494203-67fa85d8-8e67-4d04-9b65-5541ba339a0b.png">
+</h1>
 
-## 🤖 Testing de la API
+## Testing de la API 🤖 
 1. Para poder realizar el test debemos subir una imagen en la ruta donde se encuentra el archivo de testeo
 ```
 ejemplo : parte_test.jpg
@@ -96,7 +98,8 @@ Se debe crear un archivo `.env`, donde se configuren las variables de entorno ne
 | `AZURE_STORAGE_CONNECTION_STRING`  | Cadena de conexion del contenedor    | 
 
 
-## 📁 Acceso a la aplicación con docker
+#
+## Acceso a la aplicación con docker 📁
 ### Docker facilita su despliegue y escalabilidad. 
 
 El proceso de despliegue se puede usar junto con CD/CI, se puede usar con github jenkinns detectará 
@@ -133,13 +136,11 @@ Esta aplicación ha sido desarrollada utilizando las siguientes tecnologías:
     - Pytest
     - Unitest
 - **Front:**
-    -HTML
-    -CSS
-    -Bootstrap(framework de CSS)
+    - HTML
+    - CSS
+    - Bootstrap(framework de CSS)
 - **Presentación:**
-    - Canva.
-
-#
+    - Canva
 
 #
 ### Contribuciones 📁
@@ -160,11 +161,6 @@ Este proyecto ha sido desarrollado por los siguientes participantes:
 
 - Andrea Sandoval  👩‍💻
 - Anghi Sanchez  👩‍💻
-- Raúl 👨‍💻
+- Raúl Muñoz 👨‍💻
 - Víctor Arbiol 👨‍💻
 
-#
-## Licencia
-#
-
-Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más información.
