@@ -96,6 +96,26 @@ Se debe crear un archivo `.env`, donde se configuren las variables de entorno ne
 | `CONTAINER_SAS_URL`                | SAS URL del contenedor               | 
 | `AZURE_STORAGE_CONNECTION_STRING`  | Cadena de conexion del contenedor    | 
 
+
+## 📁 Acceso a la aplicación con docker
+Docker facilita su despliegue y escalabilidad. 
+
+El proceso de despliegue se puede usar junto con CD/CI, se puede usar con github jenkinns detectará 
+si hay algún cambio en la rama Main, disparando un script bash que genera la descarga del repositorio, 
+la creación del docker, su posterior subida a hub-docker conectada a azure, instances container.
+
+*Descarga el contenido de docker hub* 
+
+docker push systemdeveloper868/capgemini
+
+*Para lanzar la aplicacion en local:*
+sudo docker run -d -p 8000:8000 systemdeveloper868/capgemini 
+
+*Para entrar en la aplicación por el navegador*
+
+http://172.17.0.4:8000/
+
+
 #
 ### Tecnologías utilizadas 🛠️
 
