@@ -1,5 +1,4 @@
 import json
-from json_parsing_sdk import function_load_json, recursive_search
 from diccionario_plantilla import plantilla, plantilla2, mapeo
 '''
 plantilla = {
@@ -10,7 +9,7 @@ plantilla = {
     "VehiculoA": {
         "AseguradoA": {"NOMBRE": "Monica", "Apellidos": "Ramos", "Direcci\u00f3n": "C/ Morales 7", "C\u00f3digo Postal": "12211", "Pa\u00eds": "Lituania", "Tel. o E-mail": "Lazaro.josefa@gmail.com"}, 
         "AseguradoraA": {"NOMBRE": "Essalud", "N.\u00ba de p\u00f3liza": "2.3.63", "N.\u00ba de Carta Verde": "1455", "Certificado": "o Carta Verde v\u00e1lida desde 2/8 hasta 1/39", "Agencia (oficina o corredor)": "Rs rove", "Nombre": "Gabriel", "Direcci\u00f3n": "C/ rico 57", "Pa\u00eds": "EJoana", "Tel. o E-mail": "Ortiz.enrique@gmail.es"},
-        "ConductorA": {"NOMBRE": "Rosario", "Apellidos": "Ruiz", "Fecha de nacimiento": "25/6/1971", "Direcci\u00f3n": "Calle Lara 97", "Pa\u00eds": "Espana", "Tel. o E-mail": "", "Permiso de conducir n.\u00ba": "127949371", ")": "6", "Permiso v\u00e1lido hasta": "21/6/2039"}, 
+        "ConductorA": {"NOMBRE": "Rosario", "Apellidos": "Ruiz", "Fecha de nacimiento": "25/6/1971", "Direcci\u00f3n": "Calle Lara 97", "Pa\u00eds": "Espana", "Tel. o E-mail": "", "Permiso de conducir n.\u00ba": "127949371", "Categoría": "", "Permiso v\u00e1lido hasta": "21/6/2039"}, 
         
         "Circ1": {"Concepto":"Está estacionado/parado", "Estado":"unselected"},
         "Circ2": {"Concepto":"Salia de un estacionamiento/abriendo puerta", "Estado":"unselected"},
@@ -33,7 +32,7 @@ plantilla = {
     "VehiculoB": {   
         "AseguradoB": {"NOMBRE": "Alfredo", "Apellidos": "Rodriguez", "Direcci\u00f3n": "C/ vera 13", "C\u00f3digo Postal": "13242", "Pa\u00eds": "Lituania", "Tel. o E-mail": ""}, 
         "AseguradoraB": {"NOMBRE": "Catalana occidente", "N.\u00ba de p\u00f3liza": "2373", "N.\u00ba de Carta Verde": "62413", "Certificado": "", "Agencia (oficina o corredor)": "Menasalbas", "Nombre": "Lusa", "Direcci\u00f3n": "01 ruiz 16", "Pa\u00eds": "SJoana"}, 
-        "ConductorB": {"NOMBRE": "Juan Luis", "Apellidos": "Salas", "Fecha de nacimiento": "9/2/1936", "Direcci\u00f3n": "01 camp os 12", "Pa\u00eds": "Espa\u00f1a", "Tel. o E-mail": "", "Permiso de conducir n.\u00ba": "786181234", "Permiso v\u00e1lido hasta": "27/6/2025"}, 
+        "ConductorB": {"NOMBRE": "Juan Luis", "Apellidos": "Salas", "Fecha de nacimiento": "9/2/1936", "Direcci\u00f3n": "01 camp os 12", "Pa\u00eds": "Espa\u00f1a", "Tel. o E-mail": "", "Permiso de conducir n.\u00ba": "786181234", "Categoría": "", "Permiso v\u00e1lido hasta": "27/6/2025"}, 
         
         "Circ1": {"Concepto":"Está estacionado/parado", "Estado":"unselected"},
         "Circ2": {"Concepto":"Salia de un estacionamiento/abriendo puerta", "Estado":"unselected"},
@@ -77,8 +76,8 @@ def recorrer_diccionario(diccionario):
     """
     diccionario_result={}
     # Creamos una copia de la plantilla
-    planti = function_load_json("plantilla.json")
-    diccionario_modificado = planti.copy()
+    #planti = function_load_json("plantilla.json")
+    diccionario_modificado = plantilla.copy()
     for clave, valor in diccionario.items():
         if isinstance(valor, dict):
             recorrer_diccionario(valor)
@@ -96,17 +95,21 @@ def recorrer_diccionario(diccionario):
 # Función para actualizar el diccionario_plantilla
 def actualizar_diccionario(diccionario_plantilla, diccionario_original, mapeo):
     for clave, valor in diccionario_plantilla.items():
-        if isinstance(valor, dict):
+        if isinstance(valor, dict) and clave not in ['Vehiculo_motor_A', 'Vehiculo_motor_B']:
             if isinstance(mapeo[clave], dict):
-                print(clave)
+                #print(mapeo[clave])
                 actualizar_diccionario(valor, diccionario_original[clave], mapeo[clave])
             else:
                 actualizar_diccionario(valor, diccionario_original[mapeo[clave]], mapeo)
         else:
-            print(mapeo[clave])
-            if mapeo[clave] in diccionario_original:
+            if clave in ['Vehiculo_motor_A', 'Vehiculo_motor_B']:
+                diccionario_plantilla[clave] = diccionario_original[clave]
+            #print(clave + " yyyyy " + valor)
+            #print(bool(mapeo[clave] in diccionario_original))
+            elif mapeo[clave] in diccionario_original:
                 diccionario_plantilla[clave] = diccionario_original[mapeo[clave]]
-
+            else:
+                diccionario_plantilla[clave] = valor
 
 # Función para actualizar el diccionario_plantilla
 def modificacion_plantilla2(plantilla2, datos):
@@ -141,26 +144,26 @@ def modificacion_plantilla2(plantilla2, datos):
         plantilla2["VEHICULO_A"]["CONDUCTOR_A"]["PAIS"] = datos["ConductorA"]["Pa\u00eds"]
         plantilla2["VEHICULO_A"]["CONDUCTOR_A"]["TEL. o E-MAIL"] = datos["ConductorA"]["Tel. o E-mail"]
         plantilla2["VEHICULO_A"]["CONDUCTOR_A"]["PERMISO DE CONDUCIR n.\u00ba"] = datos["ConductorA"]["Permiso de conducir n.\u00ba"]
-        plantilla2["VEHICULO_A"]["CONDUCTOR_A"]["CATEGORIA(A,B,...)"] = datos["ConductorA"][")"]
+        plantilla2["VEHICULO_A"]["CONDUCTOR_A"]["CATEGORIA(A,B,...)"] = datos["ConductorA"]["Categoría"]
         plantilla2["VEHICULO_A"]["CONDUCTOR_A"]["PERMISO VALIDO HASTA"] = datos["ConductorA"]["Permiso v\u00e1lido hasta"]
 
-        plantilla2["VEHICULO_A"]["CIRC1"]["ESTADO"] = datos["Circ1_A"][""]
-        plantilla2["VEHICULO_A"]["CIRC2"]["ESTADO"] = datos["Circ2_A"][""]
-        plantilla2["VEHICULO_A"]["CIRC3"]["ESTADO"] = datos["Circ3_A"][""]
-        plantilla2["VEHICULO_A"]["CIRC4"]["ESTADO"] = datos["Circ4_A"][""]
-        plantilla2["VEHICULO_A"]["CIRC5"]["ESTADO"] = datos["Circ5_A"][""]
-        plantilla2["VEHICULO_A"]["CIRC6"]["ESTADO"] = datos["Circ6_A"][""]
-        plantilla2["VEHICULO_A"]["CIRC7"]["ESTADO"] = datos["Circ7_A"][""]
-        plantilla2["VEHICULO_A"]["CIRC8"]["ESTADO"] = datos["Circ8_A"][""]
-        plantilla2["VEHICULO_A"]["CIRC9"]["ESTADO"] = datos["Circ9_A"][""]
-        plantilla2["VEHICULO_A"]["CIRC10"]["ESTADO"] = datos["Circ10_A"][""]
-        plantilla2["VEHICULO_A"]["CIRC11"]["ESTADO"] = datos["Circ11_A"][""]
-        plantilla2["VEHICULO_A"]["CIRC12"]["ESTADO"] = datos["Circ12_A"][""]
-        plantilla2["VEHICULO_A"]["CIRC13"]["ESTADO"] = datos["Circ13_A"][""]
-        plantilla2["VEHICULO_A"]["CIRC14"]["ESTADO"] = datos["Circ14_A"][""]
-        plantilla2["VEHICULO_A"]["CIRC15"]["ESTADO"] = datos["Circ15_A"][""]
-        plantilla2["VEHICULO_A"]["CIRC16"]["ESTADO"] = datos["Circ16_A"][""]
-        plantilla2["VEHICULO_A"]["CIRC17"]["ESTADO"] = datos["Circ17_A"][""]
+        plantilla2["VEHICULO_A"]["CIRC1"]["ESTADO"] = datos["Circ1_A"][1]
+        plantilla2["VEHICULO_A"]["CIRC2"]["ESTADO"] = datos["Circ2_A"][1]
+        plantilla2["VEHICULO_A"]["CIRC3"]["ESTADO"] = datos["Circ3_A"][1]
+        plantilla2["VEHICULO_A"]["CIRC4"]["ESTADO"] = datos["Circ4_A"][1]
+        plantilla2["VEHICULO_A"]["CIRC5"]["ESTADO"] = datos["Circ5_A"][1]
+        plantilla2["VEHICULO_A"]["CIRC6"]["ESTADO"] = datos["Circ6_A"][1]
+        plantilla2["VEHICULO_A"]["CIRC7"]["ESTADO"] = datos["Circ7_A"][1]
+        plantilla2["VEHICULO_A"]["CIRC8"]["ESTADO"] = datos["Circ8_A"][1]
+        plantilla2["VEHICULO_A"]["CIRC9"]["ESTADO"] = datos["Circ9_A"][1]
+        plantilla2["VEHICULO_A"]["CIRC10"]["ESTADO"] = datos["Circ10_A"][1]
+        plantilla2["VEHICULO_A"]["CIRC11"]["ESTADO"] = datos["Circ11_A"][1]
+        plantilla2["VEHICULO_A"]["CIRC12"]["ESTADO"] = datos["Circ12_A"][1]
+        plantilla2["VEHICULO_A"]["CIRC13"]["ESTADO"] = datos["Circ13_A"][1]
+        plantilla2["VEHICULO_A"]["CIRC14"]["ESTADO"] = datos["Circ14_A"][1]
+        plantilla2["VEHICULO_A"]["CIRC15"]["ESTADO"] = datos["Circ15_A"][1]
+        plantilla2["VEHICULO_A"]["CIRC16"]["ESTADO"] = datos["Circ16_A"][1]
+        plantilla2["VEHICULO_A"]["CIRC17"]["ESTADO"] = datos["Circ17_A"][1]
 
         plantilla2["VEHICULO_B"]["ASEGURADO_B"]["NOMBRE"] = datos["AseguradoB"]["NOMBRE"]
         plantilla2["VEHICULO_B"]["ASEGURADO_B"]["APELLIDOS"] = datos["AseguradoB"]["Apellidos"]
@@ -212,16 +215,16 @@ def modificacion_plantilla2(plantilla2, datos):
     
 
 #print(diccionario_original[mapeo['telefono_original']])
-
+'''
 diccionario_plantilla = plantilla
 
 
 # Cargamos el archivo JSON con lo datos a insertar en nuestra plantilla
-with open('result_test_sdk_2.json') as f:
+with open('Circ11_B.json') as f:
     diccionario_original = json.load(f)
 
 # Actualizar diccionario_plantilla con los valores del diccionario_original
-actualizar_diccionario(diccionario_plantilla, diccionario_original, mapeo)
+#actualizar_diccionario(diccionario_plantilla, diccionario_original, mapeo)
 
 # Insertamos directamente a plantilla2
 #modificacion_plantilla2(plantilla2, diccionario_original)
@@ -232,8 +235,8 @@ actualizar_diccionario(diccionario_plantilla, diccionario_original, mapeo)
 # Guardar el diccionario_plantilla actualizado en un archivo.json
 with open('archivo_mapping.json', 'w') as f:
     json.dump(diccionario_plantilla, f, indent=4)
-
-    
+'''
+ 
 
 
 

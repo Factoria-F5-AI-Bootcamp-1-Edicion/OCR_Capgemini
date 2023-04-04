@@ -1,12 +1,14 @@
 plantilla = {
-    "Fecha": {},
-    "Hora": {},
-    "Lugar": {},
-    "Testigos": {},
+    "Fecha": {""},
+    "Hora": {""},
+    "Lugar": {""},
+    "Testigos": {""},
     "AseguradoA": {"NOMBRE": "", "Apellidos": "", "Direcci\u00f3n": "", "C\u00f3digo Postal": "", "Pa\u00eds": "", "Tel. o E-mail": ""}, 
     "AseguradoraA": {"NOMBRE": "", "N.\u00ba de p\u00f3liza": "", "N.\u00ba de Carta Verde": "", "Certificado": "", "Agencia (oficina o corredor)": "", "Nombre": "", "Direcci\u00f3n": "", "Pa\u00eds": "", "Tel. o E-mail": ""},
-    "ConductorA": {"NOMBRE": "", "Apellidos": "", "Fecha de nacimiento": "", "Direcci\u00f3n": "", "Pa\u00eds": "", "Tel. o E-mail": "", "Permiso de conducir n.\u00ba": "", ")": "", "Permiso v\u00e1lido hasta": ""}, 
-    
+    "ConductorA": {"NOMBRE": "", "Apellidos": "", "Fecha de nacimiento": "", "Direcci\u00f3n": "", "Pa\u00eds": "", "Tel. o E-mail": "", "Permiso de conducir n.\u00ba": "", ")": "", "Permiso v\u00e1lido hasta": ""},
+    "Vehiculo_motor_A": {},
+    "Remolque_A":{""},
+
     "Circ1_A": {"Concepto":"Está estacionado/parado", "Estado":"unselected"},
     "Circ2_A": {"Concepto":"Salia de un estacionamiento/abriendo puerta", "Estado":"unselected"},
     "Circ3_A": {"Concepto":"Iba a estacionar", "Estado":"unselected"},
@@ -23,12 +25,14 @@ plantilla = {
     "Circ15_A": {"Concepto":"Invadia la parte reservada a la circulacion en sentido inverso", "Estado":"unselected"},
     "Circ16_A": {"Concepto":"Venia de la derecha(en un cruce)", "Estado":"unselected"},
     "Circ17_A": {"Concepto":"No respeto la señal de preferencia o semaforo en rojo", "Estado":"unselected"},
-    "N\u00b0casillas_A": {"Estado": "unselected"},
+    "Nºcasillas_A": {""},
 
     "AseguradoB": {"NOMBRE": "", "Apellidos": "", "Direcci\u00f3n": "", "C\u00f3digo Postal": "", "Pa\u00eds": "", "Tel. o E-mail": ""}, 
     "AseguradoraB": {"NOMBRE": "", "N.\u00ba de p\u00f3liza": "", "N.\u00ba de Carta Verde": "", "Certificado": "", "Agencia (oficina o corredor)": "", "Nombre": "", "Direcci\u00f3n": "", "Pa\u00eds": ""}, 
     "ConductorB": {"NOMBRE": "", "Apellidos": "", "Fecha de nacimiento": "", "Direcci\u00f3n": "", "Pa\u00eds": "", "Tel. o E-mail": "", "Permiso de conducir n.\u00ba": "", "Permiso v\u00e1lido hasta": ""}, 
-    
+    "Vehiculo_motor_B": {},
+    "Remolque_B":{""},
+
     "Circ1_B": {"Concepto":"Está estacionado/parado", "Estado":"unselected"},
     "Circ2_B": {"Concepto":"Salia de un estacionamiento/abriendo puerta", "Estado":"unselected"},
     "Circ3_B": {"Concepto":"Iba a estacionar", "Estado":"unselected"},
@@ -45,16 +49,16 @@ plantilla = {
     "Circ15_B": {"Concepto":"Invadia la parte reservada a la circulacion en sentido inverso", "Estado":"unselected"},
     "Circ16_B": {"Concepto":"Venia de la derecha(en un cruce)", "Estado":"unselected"},
     "Circ17_B": {"Concepto":"No respeto la señal de preferencia o semaforo en rojo", "Estado":"unselected"},
-    "N\u00b0casillas_B": {"Estado": "unselected"},
+    "Nºcasillas_B": {}
 
 }
 
 
 plantilla2 = {
-    "FECHA": {},
-    "HORA": {},
-    "LUGAR": {},
-    "TESTIGOS": {},
+    "FECHA": {""},
+    "HORA": {""},
+    "LUGAR": {""},
+    "TESTIGOS": {""},
     "VEHICULO_A":{
         "ASEGURADO_A": {"NOMBRE": "", "APELLIDOS": "", "DIRECCION": "", "CODIGO_POSTAL": "", "PAIS": "", "TEL. O E-MAIL": ""}, 
         "ASEGURADORA_A": {"NOMBRE": "", "Nº DE POLIZA": "", "N.º DE CARTA VERDE": "", "CERTIFICADO": "", "AGENCIA (OFICINA O CORREDOR)": "", "NOMBRE_AGENCIA": "", "DIRECCION_AGENCIA": "", "PAIS_AGENCIA": "", "TEL. O E-MAIL AGENCIA": ""},
@@ -77,7 +81,7 @@ plantilla2 = {
         "CIRC15": {"CONCEPTO":"Invadia la parte reservada a la circulacion en sentido inverso", "ESTADO":"unselected"},
         "CIRC16": {"CONCEPTO":"Venia de la derecha(en un cruce)", "ESTADO":"unselected"},
         "CIRC17": {"CONCEPTO":"No respeto la señal de preferencia o semaforo en rojo", "ESTADO":"unselected"},
-        "Nº_CASILLAS": {"ESTADO": "unselected"}
+        "Nº_CASILLAS": {""}
     },
     "VEHICULO_B":{
         "ASEGURADO_B": {"NOMBRE": "", "APELLIDOS": "", "DIRECCION": "", "CODIGO POSTAL": "", "PAIS": "", "TEL. O E-MAIL": ""}, 
@@ -100,7 +104,7 @@ plantilla2 = {
         "CIRC15": {"CONCEPTO":"Invadia la parte reservada a la circulacion en sentido inverso", "ESTADO":"unselected"},
         "CIRC16": {"CONCEPTO":"Venia de la derecha(en un cruce)", "ESTADO":"unselected"},
         "CIRC17": {"CONCEPTO":"No respeto la señal de preferencia o semaforo en rojo", "ESTADO":"unselected"},
-        "Nº_CASILLAS": {"ESTADO": "unselected"}
+        "Nº_CASILLAS": {""}
     }
 }
 
@@ -113,48 +117,52 @@ mapeo = {
     "AseguradoA": {"NOMBRE": "NOMBRE", "Apellidos": "Apellidos", "Direcci\u00f3n": "Direcci\u00f3n", "C\u00f3digo Postal": "C\u00f3digo Postal", "Pa\u00eds": "Pa\u00eds", "Tel. o E-mail": "Tel. o E-mail"}, 
     "AseguradoraA": {"NOMBRE": "NOMBRE", "N.\u00ba de p\u00f3liza": "N.\u00ba de p\u00f3liza", "N.\u00ba de Carta Verde": "N.\u00ba de Carta Verde", "Certificado": "Certificado", "Agencia (oficina o corredor)": "Agencia (oficina o corredor)", "Nombre": "Nombre", "Direcci\u00f3n": "Direcci\u00f3n", "Pa\u00eds": "Pa\u00eds", "Tel. o E-mail": "Tel. o E-mail"},
     "ConductorA": {"NOMBRE": "NOMBRE", "Apellidos": "Apellidos", "Fecha de nacimiento": "Fecha de nacimiento", "Direcci\u00f3n": "Direcci\u00f3n", "Pa\u00eds": "Pa\u00eds", "Tel. o E-mail": "Tel. o E-mail", "Permiso de conducir n.\u00ba": "Permiso de conducir n.\u00ba", ")": ")", "Permiso v\u00e1lido hasta": "Permiso v\u00e1lido hasta"}, 
-    
-    "Circ1_A": {"Concepto":"Concepto", "Estado":""},
-    "Circ2_A": {"Concepto":"Concepto", "Estado":""},
-    "Circ3_A": {"Concepto":"Concepto", "Estado":""},
-    "Circ4_A": {"Concepto":"Concepto", "Estado":""},
-    "Circ5_A": {"Concepto":"Concepto", "Estado":""},
-    "Circ6_A": {"Concepto":"Concepto", "Estado":""},
-    "Circ7_A": {"Concepto":"Concepto", "Estado":""},
-    "Circ8_A": {"Concepto":"Concepto", "Estado":""},
-    "Circ9_A": {"Concepto":"Concepto", "Estado":""},
-    "Circ10_A": {"Concepto":"Concepto", "Estado":""},
-    "Circ11_A": {"Concepto":"Concepto", "Estado":""},
-    "Circ12_A": {"Concepto":"Concepto", "Estado":""},
-    "Circ13_A": {"Concepto":"Concepto", "Estado":""},
-    "Circ14_A": {"Concepto":"Concepto", "Estado":""},
-    "Circ15_A": {"Concepto":"Concepto", "Estado":""},
-    "Circ16_A": {"Concepto":"Concepto", "Estado":""},
-    "Circ17_A": {"Concepto":"Concepto", "Estado":""},
-    "N\u00b0casillas_A":{"Estado":""},
+    "Vehiculo_motor_A": {},
+    "Remolque_A":"Remolque_A",
+
+    "Circ1_A": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ2_A": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ3_A": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ4_A": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ5_A": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ6_A": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ7_A": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ8_A": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ9_A": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ10_A": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ11_A": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ12_A": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ13_A": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ14_A": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ15_A": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ16_A": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ17_A": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Nºcasillas_A":"N\u00b0casillas_A",
 
     "AseguradoB": {"NOMBRE": "NOMBRE", "Apellidos": "Apellidos", "Direcci\u00f3n": "Direcci\u00f3n", "C\u00f3digo Postal": "C\u00f3digo Postal", "Pa\u00eds": "Pa\u00eds", "Tel. o E-mail": "Tel. o E-mail"}, 
     "AseguradoraB": {"NOMBRE": "NOMBRE", "N.\u00ba de p\u00f3liza": "N.\u00ba de p\u00f3liza", "N.\u00ba de Carta Verde": "N.\u00ba de Carta Verde", "Certificado": "Certificado", "Agencia (oficina o corredor)": "Agencia (oficina o corredor)", "Nombre": "Nombre", "Direcci\u00f3n": "Direcci\u00f3n", "Pa\u00eds": "Pa\u00eds"}, 
     "ConductorB": {"NOMBRE": "NOMBRE", "Apellidos": "Apellidos", "Fecha de nacimiento": "Fecha de nacimiento", "Direcci\u00f3n": "Direcci\u00f3n", "Pa\u00eds": "Pa\u00eds", "Tel. o E-mail": "Tel. o E-mail", "Permiso de conducir n.\u00ba": "Permiso de conducir n.\u00ba", "Permiso v\u00e1lido hasta": "Permiso v\u00e1lido hasta"}, 
-    
-    "Circ1_B": {"Concepto":"Concepto", "Estado":""},
-    "Circ2_B": {"Concepto":"Concepto", "Estado":""},
-    "Circ3_B": {"Concepto":"Concepto", "Estado":""},
-    "Circ4_B": {"Concepto":"Concepto", "Estado":""},
-    "Circ5_B": {"Concepto":"Concepto", "Estado":""},
-    "Circ6_B": {"Concepto":"Concepto", "Estado":""},
-    "Circ7_B": {"Concepto":"Concepto", "Estado":""},
-    "Circ8_B": {"Concepto":"Concepto", "Estado":""},
-    "Circ9_B": {"Concepto":"Concepto", "Estado":""},
-    "Circ10_B": {"Concepto":"Concepto", "Estado":""},
-    "Circ11_B": {"Concepto":"Concepto", "Estado":""},
-    "Circ12_B": {"Concepto":"Concepto", "Estado":""},
-    "Circ13_B": {"Concepto":"Concepto", "Estado":""},
-    "Circ14_B": {"Concepto":"Concepto", "Estado":""},
-    "Circ15_B": {"Concepto":"Concepto", "Estado":""},
-    "Circ16_B": {"Concepto":"Concepto", "Estado":""},
-    "Circ17_B": {"Concepto":"Concepto", "Estado":""},
-    "N\u00b0casillas_B":{"Estado":""}
+    "Vehiculo_motor_A": {},
+    "Remolque_B":"Remolque_B",
+
+    "Circ1_B": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ2_B": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ3_B": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ4_B": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ5_B": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ6_B": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ7_B": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ8_B": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ9_B": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ10_B": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ11_B": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ12_B": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ13_B": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ14_B": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ15_B": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ16_B": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Circ17_B": {"Concepto":"Concepto", "Estado":"Estado"},
+    "Nºcasillas_B":"N\u00b0casillas_B"
     
 }
 
