@@ -1,6 +1,6 @@
 import json
 import re
-#from Prueba.mapping import actualizar_diccionario
+#from SDK.mapping import actualizar_diccionario
 #from diccionario_plantilla import plantilla, mapeo
 
 def function_load_json(archive_json):

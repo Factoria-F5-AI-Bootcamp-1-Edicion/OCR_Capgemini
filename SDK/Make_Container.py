@@ -17,7 +17,7 @@ container_name = "prueba"
 container_client = blob_service_client.create_container(container_name)
 
 # Se especifica la ruta de la carpeta que contiene las imágenes a subir
-folder_path = "/sysroot/home/andreasandoval/Documentos/BOOTCAMP_F5/OCR/OCR_Capgemini/Prueba/Renombrar/jsons_10"
+folder_path = "/sysroot/home/andreasandoval/Documentos/BOOTCAMP_F5/OCR/OCR_Capgemini/SDK/Renombrar/jsons_10"
 
 # Se imprime el mensaje de confirmación
 print(f"El contenedor {container_name} se ha creado correctamente.")

@@ -4,7 +4,7 @@
 #Exception files
 .idea
 /API/Images
-Prueba/Renombrar/Dataset
+SDK/Renombrar/Dataset
 
 #Python
 # Byte-compiled / optimized / DLL files
