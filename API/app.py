@@ -26,9 +26,9 @@ document_model_admin_client = DocumentModelAdministrationClient(endpoint, creden
 app = Flask(__name__)
 
 # Definir la ruta de la carpeta de subida
-app.config['UPLOAD_FOLDER'] = '/sysroot/home/andreasandoval/Documentos/BOOTCAMP_F5/OCR/OCR_Capgemini/API/Images'
+app.config['UPLOAD_FOLDER'] = '/home/anghi/Documentos/PracticasF5/OCR_Capgemini/API/Images'
 
-#Definir la ruta de inicio
+
 @app.route('/')
 def hello():
     return render_template("main.html")
@@ -36,8 +36,13 @@ def hello():
 # Definir la ruta para procesar la imagen y devolver el archivo JSON
 @app.route('/analize_image', methods=['POST'])
 def subir_imagen():
+    UPLOAD_FOLDER = "/home/anghi/Documentos/PracticasF5/OCR_Capgemini/API/Images"
 
     if request.method == 'POST':
+
+        # Verificar si la carpeta UPLOAD_FOLDER existe, sino crearla
+        if not os.path.exists(UPLOAD_FOLDER):
+            os.makedirs(UPLOAD_FOLDER)
 
         f = request.files.get('userfile', None)
         if f is not None:
@@ -49,6 +54,8 @@ def subir_imagen():
             f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
         image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+
+
 
         with open(image_path, "rb") as f:
             # Make sure your document's type is included in the list of document types the custom model can analyze
