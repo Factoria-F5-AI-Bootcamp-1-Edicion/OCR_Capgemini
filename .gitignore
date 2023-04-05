@@ -160,8 +160,8 @@ poetry.toml
 pyrightconfig.json
 
 # json archives
-.json
+*.json
 
 
 # jpg archives
-.jpg
+*.jpg
