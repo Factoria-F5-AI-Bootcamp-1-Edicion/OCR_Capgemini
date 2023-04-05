@@ -27,7 +27,7 @@ Intentamos seguir practicas eticas basandonos en:
 ## 💻 Aplicación de partes de seguros de automóviles  
 
 <h1 align="center">
-  <img align="center" width="950" height="450" src="https://user-images.githubusercontent.com/74676901/227197818-e0221aa9-42bf-4722-864f-e0c1e3934717.png">
+  <img align="center" width="950" height="500" src="https://user-images.githubusercontent.com/74676901/227197818-e0221aa9-42bf-4722-864f-e0c1e3934717.png">
 </h1>
 
 Esta aplicación tiene como objetivo simplificar y mejorar el proceso de gestión de partes de seguros de automóviles con el recurso de Microsoft Azure Form Recognizer para que tenga capacidades de reconocimiento de texto e identificación de entidades.
@@ -69,12 +69,13 @@ flask run
 6. Esto nos llevará al servidor de la API , donde podremos subir el documento que queremos analizar y nos permitirá descargar el json que se genera.
 
 <h1 align="center">
-  <img align="center" width="350" height="200" src="https://user-images.githubusercontent.com/108665291/229494203-67fa85d8-8e67-4d04-9b65-5541ba339a0b.png">
+  <img align="center" width="400" height="200" src="https://user-images.githubusercontent.com/74676901/230017499-dcfead40-4701-4c3a-8570-6c615aff3912.png">
 </h1>
 
 ## 🤖Testing de la API 
 1. Para poder realizar el test debemos subir una imagen en la ruta donde se encuentra el archivo de testeo
 ```
+
 ejemplo : parte_test.jpg
 ```
 
@@ -114,7 +115,7 @@ docker run -d -p 8000:8000 systemdeveloper868/capgemini
 ```
 **Para entrar en la aplicación por el navegador**
 ```
-http://172.17.0.4:8000/
+http://20.8.153.114:8000/
 ``````
 
 #
@@ -139,6 +140,8 @@ Esta aplicación ha sido desarrollada utilizando las siguientes tecnologías:
     - Bootstrap(framework de CSS)
 - **Presentación:**
     - Canva
+ - **Documentación:**
+    - [Notion]( https://carpal-pyramid-f1c.notion.site/Form-Recognizer-de-Azure-d5471258810042f788b24509ddba715f) 
 
 #
 ##  👩‍💻 Participantes
