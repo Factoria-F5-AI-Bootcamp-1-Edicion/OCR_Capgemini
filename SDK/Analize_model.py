@@ -13,7 +13,7 @@ load_dotenv()
 
 endpoint = os.getenv("AZURE_FORM_RECOGNIZER_ENDPOINT")
 key = os.getenv("AZURE_FORM_RECOGNIZER_KEY")
-model_id = "Model_2"
+model_id = "Model_template"
 formUrl = "https://github.com/aratan/Azure-OCR/blob/adfe9d0db7be28cda624e9ea1370d84a67779627/parte_amistoso_0.jpg?raw=true"
 
 document_analysis_client = DocumentAnalysisClient(endpoint=endpoint, credential=AzureKeyCredential(key))
@@ -55,12 +55,13 @@ except json.JSONDecodeError as err:
     print("\n El JSON no es válido:" + str(err))
 
 
-# Llamamos a la function para realizar el parseo
-function_json_parsing(diccionario)
 
-'''
 # Nombrar el archivo JSON generado con el nombre del archivo de imagen de entrada
 output_filename = f"{name}.json"
 with open(output_filename, "w") as archivo_json:
     json.dump(diccionario, archivo_json, ensure_ascii=False, sort_keys=True, indent=4 )
-'''
+
+
+# Llamamos a la function para realizar el parseo
+function_json_parsing(diccionario)
+

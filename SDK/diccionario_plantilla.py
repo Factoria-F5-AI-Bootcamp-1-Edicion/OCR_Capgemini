@@ -6,8 +6,8 @@ plantilla = {
     "AseguradoA": {"NOMBRE": "", "Apellidos": "", "Direcci\u00f3n": "", "C\u00f3digo Postal": "", "Pa\u00eds": "", "Tel. o E-mail": ""}, 
     "AseguradoraA": {"NOMBRE": "", "N.\u00ba de p\u00f3liza": "", "N.\u00ba de Carta Verde": "", "Certificado": "", "Agencia (oficina o corredor)": "", "Nombre": "", "Direcci\u00f3n": "", "Pa\u00eds": "", "Tel. o E-mail": ""},
     "ConductorA": {"NOMBRE": "", "Apellidos": "", "Fecha de nacimiento": "", "Direcci\u00f3n": "", "Pa\u00eds": "", "Tel. o E-mail": "", "Permiso de conducir n.\u00ba": "", ")": "", "Permiso v\u00e1lido hasta": ""},
-    "Vehiculo_motor_A": {},
-    "Remolque_A":{""},
+    "Vehiculo_motor_A": {"Marca, modelo": "", "Matrícula (o bastidor)": "", "País de matrícula": ""},
+    "Remolque_A":{"Matrícula (o bastidor)": "", "País de matrícula": ""},
 
     "Circ1_A": {"Concepto":"Está estacionado/parado", "Estado":"unselected"},
     "Circ2_A": {"Concepto":"Salia de un estacionamiento/abriendo puerta", "Estado":"unselected"},
@@ -30,8 +30,8 @@ plantilla = {
     "AseguradoB": {"NOMBRE": "", "Apellidos": "", "Direcci\u00f3n": "", "C\u00f3digo Postal": "", "Pa\u00eds": "", "Tel. o E-mail": ""}, 
     "AseguradoraB": {"NOMBRE": "", "N.\u00ba de p\u00f3liza": "", "N.\u00ba de Carta Verde": "", "Certificado": "", "Agencia (oficina o corredor)": "", "Nombre": "", "Direcci\u00f3n": "", "Pa\u00eds": ""}, 
     "ConductorB": {"NOMBRE": "", "Apellidos": "", "Fecha de nacimiento": "", "Direcci\u00f3n": "", "Pa\u00eds": "", "Tel. o E-mail": "", "Permiso de conducir n.\u00ba": "", "Permiso v\u00e1lido hasta": ""}, 
-    "Vehiculo_motor_B": {},
-    "Remolque_B":{""},
+    "Vehiculo_motor_B": {"Matrícula (o bastidor)": "", "Marca, modelo": "", "País de matrícula": ""},
+    "Remolque_B":{"Matrícula (o bastidor)": "", "País de matrícula": ""},
 
     "Circ1_B": {"Concepto":"Está estacionado/parado", "Estado":"unselected"},
     "Circ2_B": {"Concepto":"Salia de un estacionamiento/abriendo puerta", "Estado":"unselected"},
@@ -117,8 +117,8 @@ mapeo = {
     "AseguradoA": {"NOMBRE": "NOMBRE", "Apellidos": "Apellidos", "Direcci\u00f3n": "Direcci\u00f3n", "C\u00f3digo Postal": "C\u00f3digo Postal", "Pa\u00eds": "Pa\u00eds", "Tel. o E-mail": "Tel. o E-mail"}, 
     "AseguradoraA": {"NOMBRE": "NOMBRE", "N.\u00ba de p\u00f3liza": "N.\u00ba de p\u00f3liza", "N.\u00ba de Carta Verde": "N.\u00ba de Carta Verde", "Certificado": "Certificado", "Agencia (oficina o corredor)": "Agencia (oficina o corredor)", "Nombre": "Nombre", "Direcci\u00f3n": "Direcci\u00f3n", "Pa\u00eds": "Pa\u00eds", "Tel. o E-mail": "Tel. o E-mail"},
     "ConductorA": {"NOMBRE": "NOMBRE", "Apellidos": "Apellidos", "Fecha de nacimiento": "Fecha de nacimiento", "Direcci\u00f3n": "Direcci\u00f3n", "Pa\u00eds": "Pa\u00eds", "Tel. o E-mail": "Tel. o E-mail", "Permiso de conducir n.\u00ba": "Permiso de conducir n.\u00ba", ")": ")", "Permiso v\u00e1lido hasta": "Permiso v\u00e1lido hasta"}, 
-    "Vehiculo_motor_A": {},
-    "Remolque_A":"Remolque_A",
+    "Vehiculo_motor_A": {"Marca, modelo": "Marca, modelo", "Matrícula (o bastidor)": "Matrícula (o bastidor)", "País de matrícula": "País de matrícula"},
+    "Remolque_A":{"Matrícula (o bastidor)": "Matrícula (o bastidor)", "País de matrícula": "País de matrícula"},
 
     "Circ1_A": {"Concepto":"Concepto", "Estado":"Estado"},
     "Circ2_A": {"Concepto":"Concepto", "Estado":"Estado"},
@@ -142,8 +142,8 @@ mapeo = {
     "AseguradoB": {"NOMBRE": "NOMBRE", "Apellidos": "Apellidos", "Direcci\u00f3n": "Direcci\u00f3n", "C\u00f3digo Postal": "C\u00f3digo Postal", "Pa\u00eds": "Pa\u00eds", "Tel. o E-mail": "Tel. o E-mail"}, 
     "AseguradoraB": {"NOMBRE": "NOMBRE", "N.\u00ba de p\u00f3liza": "N.\u00ba de p\u00f3liza", "N.\u00ba de Carta Verde": "N.\u00ba de Carta Verde", "Certificado": "Certificado", "Agencia (oficina o corredor)": "Agencia (oficina o corredor)", "Nombre": "Nombre", "Direcci\u00f3n": "Direcci\u00f3n", "Pa\u00eds": "Pa\u00eds"}, 
     "ConductorB": {"NOMBRE": "NOMBRE", "Apellidos": "Apellidos", "Fecha de nacimiento": "Fecha de nacimiento", "Direcci\u00f3n": "Direcci\u00f3n", "Pa\u00eds": "Pa\u00eds", "Tel. o E-mail": "Tel. o E-mail", "Permiso de conducir n.\u00ba": "Permiso de conducir n.\u00ba", "Permiso v\u00e1lido hasta": "Permiso v\u00e1lido hasta"}, 
-    "Vehiculo_motor_A": {},
-    "Remolque_B":"Remolque_B",
+    "Vehiculo_motor_B": {"Marca, modelo": "Marca, modelo", "Matrícula (o bastidor)": "Matrícula (o bastidor)", "País de matrícula": "País de matrícula"},
+    "Remolque_B":{"Matrícula (o bastidor)": "Matrícula (o bastidor)", "País de matrícula": "País de matrícula"},
 
     "Circ1_B": {"Concepto":"Concepto", "Estado":"Estado"},
     "Circ2_B": {"Concepto":"Concepto", "Estado":"Estado"},

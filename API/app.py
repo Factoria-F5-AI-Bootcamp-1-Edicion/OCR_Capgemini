@@ -17,7 +17,7 @@ load_dotenv()
 # Configurar el cliente de Form Recognizer
 endpoint = os.getenv("AZURE_FORM_RECOGNIZER_ENDPOINT")
 key = os.getenv("AZURE_FORM_RECOGNIZER_KEY")
-model_id = "Model_neural"
+model_id = "Model_template"
 
 credential = AzureKeyCredential(key)
 document_model_admin_client = DocumentModelAdministrationClient(endpoint, credential)
@@ -36,7 +36,7 @@ def hello():
 # Definir la ruta para procesar la imagen y devolver el archivo JSON
 @app.route('/analize_image', methods=['POST'])
 def subir_imagen():
-    UPLOAD_FOLDER = " os.path.join(os.getcwd(), 'Images')
+    UPLOAD_FOLDER = os.path.join(os.getcwd(), 'Images')
 
     if request.method == 'POST':
 
