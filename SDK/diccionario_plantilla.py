@@ -54,60 +54,6 @@ plantilla = {
 }
 
 
-plantilla2 = {
-    "FECHA": {""},
-    "HORA": {""},
-    "LUGAR": {""},
-    "TESTIGOS": {""},
-    "VEHICULO_A":{
-        "ASEGURADO_A": {"NOMBRE": "", "APELLIDOS": "", "DIRECCION": "", "CODIGO_POSTAL": "", "PAIS": "", "TEL. O E-MAIL": ""}, 
-        "ASEGURADORA_A": {"NOMBRE": "", "Nº DE POLIZA": "", "N.º DE CARTA VERDE": "", "CERTIFICADO": "", "AGENCIA (OFICINA O CORREDOR)": "", "NOMBRE_AGENCIA": "", "DIRECCION_AGENCIA": "", "PAIS_AGENCIA": "", "TEL. O E-MAIL AGENCIA": ""},
-        "CONDUCTOR_A": {"NOMBRE": "", "APELLIDOS": "", "FECHA DE NACIMIENTO": "", "DIRECCION": "", "PAIS": "", "TEL. o E-MAIL": "", "Nº PERMISO DE CONDUCIR": "", "CATEGORIA(A,B,...)": "", "PERMISO VALIDO HASTA": ""}, 
-        
-        "CIRC1": {"CONCEPTO":"Está estacionado/parado", "ESTADO":"unselected"},
-        "CIRC2": {"CONCEPTO":"Salia de un estacionamiento/abriendo puerta", "ESTADO":"unselected"},
-        "CIRC3": {"CONCEPTO":"Salia de un estacionamiento/abriendo puerta", "ESTADO":"unselected"},
-        "CIRC4": {"CONCEPTO":"Salía de un aparcamiento, de un lugar privado o un camino de tierra", "ESTADO":"unselected"},
-        "CIRC5": {"CONCEPTO":"Entrada a un aparcamiento, de un lugar privado o un camino de tierra", "ESTADO":"unselected"},
-        "CIRC6": {"CONCEPTO":"Entrada a una plaza de sentido giratorio", "ESTADO":"unselected"},
-        "CIRC7": {"CONCEPTO":"Circulaba a una plaza de sentido giratorio", "ESTADO":"unselected"},
-        "CIRC8": {"CONCEPTO":"Colisiono en la parte de atras al otro vehiculo que circulaba en el mismo sentido y en el mismo carril", "ESTADO":"unselected"},
-        "CIRC9": {"CONCEPTO":"Circulaba en el mismo sentido y distinto carril", "ESTADO":"unselected"},
-        "CIRC10": {"CONCEPTO":"Cambiaba de carril", "ESTADO":"unselected"},
-        "CIRC11": {"CONCEPTO":"Adelantaba", "ESTADO":"unselected"},
-        "CIRC12": {"CONCEPTO":"Giraba a la derecha", "ESTADO":"unselected"},
-        "CIRC13": {"CONCEPTO":"Daba marcha atras", "ESTADO":"unselected"},
-        "CIRC14": {"CONCEPTO":"Daba marcha atras", "ESTADO":"unselected"},
-        "CIRC15": {"CONCEPTO":"Invadia la parte reservada a la circulacion en sentido inverso", "ESTADO":"unselected"},
-        "CIRC16": {"CONCEPTO":"Venia de la derecha(en un cruce)", "ESTADO":"unselected"},
-        "CIRC17": {"CONCEPTO":"No respeto la señal de preferencia o semaforo en rojo", "ESTADO":"unselected"},
-        "Nº_CASILLAS": {""}
-    },
-    "VEHICULO_B":{
-        "ASEGURADO_B": {"NOMBRE": "", "APELLIDOS": "", "DIRECCION": "", "CODIGO POSTAL": "", "PAIS": "", "TEL. O E-MAIL": ""}, 
-        "ASEGURADORA_B": {"NOMBRE": "", "Nº DE POLIZA": "", "N.º DE CARTA VERDE": "", "CERTIFICADO": "", "AGENCIA (OFICINA O CORREDOR)": "", "NOMBRE_AGENCIA": "", "DIRECCION_AGENCIA": "", "PAIS_AGENCIA": "", "TEL. O E-MAIL AGENCIA": ""},
-        "CONDUCTOR_B": {"NOMBRE": "", "APELLIDOS": "", "FECHA DE NACIMIENTO": "", "DIRECCION": "", "PAIS": "", "TEL. o E-MAIL": "", "Nº PERMISO DE CONDUCIR": "", "CATEGORIA(A,B,...)": "", "PERMISO VALIDO HASTA": ""}, 
-    
-        "CIRC1": {"CONCEPTO":"Está estacionado/parado", "ESTADO":"unselected"},
-        "CIRC2": {"CONCEPTO":"Salia de un estacionamiento/abriendo puerta", "ESTADO":"unselected"},
-        "CIRC4": {"CONCEPTO":"Salía de un aparcamiento, de un lugar privado o un camino de tierra", "ESTADO":"unselected"},
-        "CIRC5": {"CONCEPTO":"Entrada a un aparcamiento, de un lugar privado o un camino de tierra", "ESTADO":"unselected"},
-        "CIRC6": {"CONCEPTO":"Entrada a una plaza de sentido giratorio", "ESTADO":"unselected"},
-        "CIRC7": {"CONCEPTO":"Circulaba a una plaza de sentido giratorio", "ESTADO":"unselected"},
-        "CIRC8": {"CONCEPTO":"Colisiono en la parte de atras al otro vehiculo que circulaba en el mismo sentido y en el mismo carril", "ESTADO":"unselected"},
-        "CIRC9": {"CONCEPTO":"Circulaba en el mismo sentido y distinto carril", "ESTADO":"unselected"},
-        "CIRC10": {"CONCEPTO":"Cambiaba de carril", "ESTADO":"unselected"},
-        "CIRC11": {"CONCEPTO":"Adelantaba", "ESTADO":"unselected"},
-        "CIRC12": {"CONCEPTO":"Giraba a la derecha", "ESTADO":"unselected"},
-        "CIRC13": {"CONCEPTO":"Daba marcha atras", "ESTADO":"unselected"},
-        "CIRC14": {"CONCEPTO":"Daba marcha atras", "ESTADO":"unselected"},
-        "CIRC15": {"CONCEPTO":"Invadia la parte reservada a la circulacion en sentido inverso", "ESTADO":"unselected"},
-        "CIRC16": {"CONCEPTO":"Venia de la derecha(en un cruce)", "ESTADO":"unselected"},
-        "CIRC17": {"CONCEPTO":"No respeto la señal de preferencia o semaforo en rojo", "ESTADO":"unselected"},
-        "Nº_CASILLAS": {""}
-    }
-}
-
 mapeo = {
     "Fecha": "Fecha",
     "Hora": "Hora",
