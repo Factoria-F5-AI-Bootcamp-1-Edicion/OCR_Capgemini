@@ -73,41 +73,11 @@ def function_json_parsing(datos):
     # print(datos)
     # Crear un diccionario para guardar los diccionarios con los datos
     lista_diccionario = {}
-    data = {}
 
     lista_diccionario = guardar_datos(datos)
 
     actualizar_diccionario(plantilla, lista_diccionario, mapeo)
 
-
-    '''
-    for k, v in datos.items():
-
-        # Dividir el texto en líneas
-        #print(k)
-        #print(v)
-        diccionario = {}
-        if '\n' not in v:
-            lista_diccionario[k]=v
-
-        else:
-            # Definir patrón
-            patron = r'\s+(?=(?:Apell\w+|Direc\w+|C[oó]di\w+|N.º\s\w+|\bPa[ií]s\b(?:[\s:]\w+)?|Fecha\s\w+))'  # Espacio en blanco delante y despues la exprexion a buscar
-
-            # Dividir la cadena según el patrón
-            lineas_patron = re.sub(patron, r'\n\g<0>', v)
-            lineas = lineas_patron.split("\n")
-            #print(lineas)
-            for linea in lineas:
-                partes = linea.split(":")
-                if len(partes) == 2:
-                    clave, valor = partes
-                    diccionario[clave.strip()] = valor.strip()
-                elif len(partes) == 3:
-                    diccionario[partes[0].strip()] = partes[1].strip()
-
-        lista_diccionario[k] = diccionario
-    '''
     # print(lista_diccionario)
     # Escribir la lista de diccionarios en un archivo JSON
     with open("result_test_sdk.json", "w") as archivo_json:

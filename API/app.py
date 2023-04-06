@@ -9,7 +9,9 @@ from azure.ai.formrecognizer import DocumentModelAdministrationClient
 from azure.core.credentials import AzureKeyCredential
 from werkzeug.utils import secure_filename
 from azure.ai.formrecognizer import DocumentAnalysisClient
-from json_parsing_sdk import function_json_parsing
+from json_parsing_sdk import function_json_parsing, function_load_json
+from diccionario_plantilla import plantilla
+
 
 # Carga las variables de entorno desde el archivo .env
 load_dotenv()
@@ -17,7 +19,7 @@ load_dotenv()
 # Configurar el cliente de Form Recognizer
 endpoint = os.getenv("AZURE_FORM_RECOGNIZER_ENDPOINT")
 key = os.getenv("AZURE_FORM_RECOGNIZER_KEY")
-model_id = "Model_template"
+model_id = "Model_neural"
 
 credential = AzureKeyCredential(key)
 document_model_admin_client = DocumentModelAdministrationClient(endpoint, credential)
@@ -94,11 +96,11 @@ def subir_imagen():
         except json.JSONDecodeError as err:
             print("\n El JSON no es válido:" + str(err))
 
-        # Llamamos a la function para realizar el parseo
-        data = function_json_parsing(diccionario)
+        # Llamamos a la function para realizar parseo
+        datos =  function_load_json("Circ11_B.json")
 
         # Serializar el objeto a JSON con opciones personalizadas
-        json_str = json.dumps(data, ensure_ascii=False, sort_keys=True, indent=4)
+        json_str = json.dumps(plantilla, ensure_ascii=False, sort_keys=True, indent=4)
 
     # Renderizar la plantilla * con el JSON serializado
     return render_template('result.html', json_data=json_str)

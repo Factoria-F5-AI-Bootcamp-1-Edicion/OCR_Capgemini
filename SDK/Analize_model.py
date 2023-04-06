@@ -56,12 +56,6 @@ except json.JSONDecodeError as err:
 
 
 
-# Nombrar el archivo JSON generado con el nombre del archivo de imagen de entrada
-output_filename = f"{name}.json"
-with open(output_filename, "w") as archivo_json:
-    json.dump(diccionario, archivo_json, ensure_ascii=False, sort_keys=True, indent=4 )
-
-
 # Llamamos a la function para realizar el parseo
 function_json_parsing(diccionario)
 
