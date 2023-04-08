@@ -1,5 +1,5 @@
 import json
-from diccionario_plantilla import plantilla, plantilla2, mapeo
+from diccionario_plantilla import plantilla, plantilla2, mapeo, mapeo2
 '''
 plantilla = {
     "Fecha": {},
@@ -102,14 +102,32 @@ def actualizar_diccionario(diccionario_plantilla, diccionario_original, mapeo):
             else:
                 actualizar_diccionario(valor, diccionario_original[mapeo[clave]], mapeo)
         else:
+            #print(mapeo)
+            #print(bool(mapeo[clave] in diccionario_original))
             if clave in ['Vehiculo_motor_A', 'Vehiculo_motor_B']:
                 diccionario_plantilla[clave] = diccionario_original[clave]
-            #print(clave + " yyyyy " + valor)
-            #print(bool(mapeo[clave] in diccionario_original))
             elif mapeo[clave] in diccionario_original:
                 diccionario_plantilla[clave] = diccionario_original[mapeo[clave]]
             else:
                 diccionario_plantilla[clave] = valor
+
+# función recursiva para actualizar las claves del diccionario anidado
+def update_keys(d, parent_key=None):
+    if isinstance(d, dict):
+        new_dict = {}
+        for k, v in d.items():
+            new_key = mapeo2.get(k, k)
+            if isinstance(v, dict):
+                v = update_keys(v, parent_key=new_key)
+            if new_key in new_dict:
+                #print(new_dict)
+                #print(v)
+                new_dict[new_key].update(v)
+            else:
+                new_dict[new_key] = v
+        return new_dict
+    else:
+        return d
 
 # Función para actualizar el diccionario_plantilla
 def modificacion_plantilla2(plantilla2, datos):
@@ -119,7 +137,7 @@ def modificacion_plantilla2(plantilla2, datos):
         plantilla2["LUGAR"] = datos["Lugar"]
         plantilla2["TESTIGOS"] = datos["Testigos"]
 
-        print(datos["AseguradoA"]["NOMBRE"])
+        print(datos["AseguradoA"])['NOMBRE']
 
         plantilla2["VEHICULO_A"]["ASEGURADO_A"]["NOMBRE"] = datos["AseguradoA"]["NOMBRE"]
         plantilla2["VEHICULO_A"]["ASEGURADO_A"]["APELLIDOS"] = datos["AseguradoA"]["Apellidos"]

@@ -3,8 +3,8 @@
 
 #Exception files
 .idea
-/API/Images
-SDK/Renombrar/Dataset
+/app_web/Images
+sdk/Renombrar/Dataset
 
 #Python
 # Byte-compiled / optimized / DLL files

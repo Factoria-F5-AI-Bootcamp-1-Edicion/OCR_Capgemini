@@ -1,8 +1,8 @@
 import json
 import re
-from mapping import actualizar_diccionario
-from diccionario_plantilla import plantilla, mapeo
-from cleaning_text import analyze_vehiculo_motor
+from mapping import actualizar_diccionario, update_keys
+from diccionario_plantilla import plantilla, plantilla2, mapeo, mapeo2
+from cleaning_text import analyze_content_text, analyze_vehiculo_motor_and_remolque
 
 
 def function_load_json(archive_json):
@@ -39,28 +39,12 @@ def guardar_datos(dic_original):
             if clave not in ["Hora", "Fecha", "Lugar", "Testigos", "N°casillas_A", "Nºcasillas_B"]:
                 if clave in ['Vehiculo_motor_A', 'Vehiculo_motor_B','Remolque_A', 'Remolque_B']:
                     ## falta mostrar bien Vehiculo a motor y remolque
-                    dicc = analyze_vehiculo_motor(valor)
+                    dicc = analyze_vehiculo_motor_and_remolque(valor)
                 else:
-                    # Definimos la expresión regular que buscará el patrón específico
-                    #pattern_remove = re.compile(r"(?<!\s)\n(?!\s)")
-                    #valor = re.sub(pattern_remove, "", valor)
-                    # Definir patrón
-                    # Espacio en blanco delante y despues la exprexion a buscar
-                    patron = r'\s+(?=(?:Apell\w+|Direc\w+|C[oó]di\w+|N.º\s\w+|\bPa[ií]s\b(?:[\s:]\w+)?))'
-                    dicc = {}
-                    # Dividir la cadena según el patrón
-                    lineas_patron = re.sub(patron, r'\n\g<0>', valor)
-                    lineas = lineas_patron.split("\n")
-                    for linea in lineas:
-                        partes = linea.split(":")
-                        if len(partes) == 2:
-                            k, v = partes
-                            dicc[k.strip()] = v.strip()
-                        elif len(partes) == 3:
-                                dicc['Estado'] = partes[1].strip()
+                    dicc = analyze_content_text(valor)
                 dic_modificado[clave] = dicc
             else:
-                dic_modificado[clave] = valor.split('\n')[0]
+                dic_modificado[clave] = valor.split('\n')[0].lower()
     #print(dic_modificado)
     return dic_modificado
 
@@ -75,9 +59,15 @@ def function_json_parsing(datos):
     lista_diccionario = {}
     data = {}
 
+    diccionario_final = plantilla
+    # Filtramos y limpiamos los datos json entregados
     lista_diccionario = guardar_datos(datos)
-
-    actualizar_diccionario(plantilla, lista_diccionario, mapeo)
+    # Actualizamos el json filtrado y limpio a la nueva plantilla para que se visualice de manera bonita
+    #print(lista_diccionario)
+    actualizar_diccionario(diccionario_final, lista_diccionario, mapeo)
+    #print(diccionario_final)
+    diccionario_final = update_keys(diccionario_final)
+    #print(diccionario_final)
 
 
     '''
@@ -108,13 +98,13 @@ def function_json_parsing(datos):
 
         lista_diccionario[k] = diccionario
     '''
-    # print(lista_diccionario)
-    # Escribir la lista de diccionarios en un archivo JSON
+
+    # Guardamos nuestra plantilla presentable y con los datos ya limpios en un archivo JSON
     with open("result_test_sdk.json", "w") as archivo_json:
-        json.dump(plantilla, archivo_json,
+        json.dump(diccionario_final, archivo_json,
                   ensure_ascii=False, sort_keys=True, indent=4)
 
-    return lista_diccionario
-
+    return diccionario_final
 
 function_json_parsing(None)
+

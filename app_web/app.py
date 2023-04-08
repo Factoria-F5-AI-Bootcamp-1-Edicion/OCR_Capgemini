@@ -1,6 +1,7 @@
 #Importación de librerías
 import json
 import os
+import sys
 import tempfile
 import jsonlint
 from dotenv import load_dotenv
@@ -9,8 +10,13 @@ from azure.ai.formrecognizer import DocumentModelAdministrationClient
 from azure.core.credentials import AzureKeyCredential
 from werkzeug.utils import secure_filename
 from azure.ai.formrecognizer import DocumentAnalysisClient
-from json_parsing_sdk import function_json_parsing, function_load_json
-from diccionario_plantilla import plantilla
+
+
+# Agregar la ruta de la carpeta raíz de tu proyecto al sys.path
+ruta_actual = sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'sdk')))
+
+# Ahora puedes importar funciones desde el paquete sdk
+from json_parsing_sdk import function_json_parsing
 
 
 # Carga las variables de entorno desde el archivo .env
@@ -19,7 +25,7 @@ load_dotenv()
 # Configurar el cliente de Form Recognizer
 endpoint = os.getenv("AZURE_FORM_RECOGNIZER_ENDPOINT")
 key = os.getenv("AZURE_FORM_RECOGNIZER_KEY")
-model_id = "Model_neural"
+model_id = "Model_template"
 
 credential = AzureKeyCredential(key)
 document_model_admin_client = DocumentModelAdministrationClient(endpoint, credential)
@@ -91,16 +97,16 @@ def subir_imagen():
 
         try:
             data = jsonlint.ValidationError(diccionario)
-            print("\n El JSON es válido/reparado:", data)
+            #print("\n El JSON es válido/reparado:", data)
 
         except json.JSONDecodeError as err:
             print("\n El JSON no es válido:" + str(err))
 
-        # Llamamos a la function para realizar parseo
-        datos =  function_load_json("Circ11_B.json")
+        # Llamamos a la function para realizar el parseo
+        data = function_json_parsing(diccionario)
 
         # Serializar el objeto a JSON con opciones personalizadas
-        json_str = json.dumps(plantilla, ensure_ascii=False, sort_keys=True, indent=4)
+        json_str = json.dumps(data, ensure_ascii=False, sort_keys=True, indent=4)
 
     # Renderizar la plantilla * con el JSON serializado
     return render_template('result.html', json_data=json_str)
