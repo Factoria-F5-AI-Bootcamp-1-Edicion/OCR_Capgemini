@@ -106,5 +106,5 @@ def function_json_parsing(datos):
 
     return diccionario_final
 
-function_json_parsing(None)
+#function_json_parsing(None)
 

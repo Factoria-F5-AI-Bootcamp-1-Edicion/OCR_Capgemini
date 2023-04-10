@@ -25,7 +25,7 @@ load_dotenv()
 # Configurar el cliente de Form Recognizer
 endpoint = os.getenv("AZURE_FORM_RECOGNIZER_ENDPOINT")
 key = os.getenv("AZURE_FORM_RECOGNIZER_KEY")
-model_id = "Model_template"
+model_id = "Model_train_neural"
 
 credential = AzureKeyCredential(key)
 document_model_admin_client = DocumentModelAdministrationClient(endpoint, credential)
@@ -102,6 +102,7 @@ def subir_imagen():
         except json.JSONDecodeError as err:
             print("\n El JSON no es válido:" + str(err))
 
+        
         # Llamamos a la function para realizar el parseo
         data = function_json_parsing(diccionario)
 
@@ -137,4 +138,4 @@ def download():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000)
+    app.run()
