@@ -13,10 +13,10 @@ from azure.ai.formrecognizer import DocumentAnalysisClient
 
 
 # Agregar la ruta de la carpeta raíz de tu proyecto al sys.path
-ruta_actual = sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'sdk')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'sdk')))
 
 # Ahora puedes importar funciones desde el paquete sdk
-from sdk.json_parsing_sdk import function_json_parsing
+from json_parsing_sdk import function_json_parsing
 
 
 # Carga las variables de entorno desde el archivo .env
