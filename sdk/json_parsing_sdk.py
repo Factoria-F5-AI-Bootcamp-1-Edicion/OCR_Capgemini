@@ -38,10 +38,10 @@ def guardar_datos(dic_original):
         elif isinstance(valor, str):
             if clave not in ["Hora", "Fecha", "Lugar", "Testigos", "N°casillas_A", "Nºcasillas_B"]:
                 if clave in ['Vehiculo_motor_A', 'Vehiculo_motor_B','Remolque_A', 'Remolque_B']:
-                    ## falta mostrar bien Vehiculo a motor y remolque
+                    ## Analizamos parte del formulario con un etiquetado diferente
                     dicc = analyze_vehiculo_motor_and_remolque(valor)
                 else:
-                    dicc = analyze_content_text(valor)
+                    dicc = analyze_content_text(valor)  # Filtrado y limpieza generica de String largos con sus claves y valores
                 dic_modificado[clave] = dicc
             else:
                 dic_modificado[clave] = valor.split('\n')[0].lower()
@@ -57,17 +57,15 @@ def function_json_parsing(datos):
     # print(datos)
     # Crear un diccionario para guardar los diccionarios con los datos
     lista_diccionario = {}
-    data = {}
 
     diccionario_final = plantilla
     # Filtramos y limpiamos los datos json entregados
     lista_diccionario = guardar_datos(datos)
     # Actualizamos el json filtrado y limpio a la nueva plantilla para que se visualice de manera bonita
-    #print(lista_diccionario)
     actualizar_diccionario(diccionario_final, lista_diccionario, mapeo)
-    #print(diccionario_final)
+    #Actualizamos las claves para que se distingan visualmente de los valores
     diccionario_final = update_keys(diccionario_final)
-    #print(diccionario_final)
+
 
 
     '''
