@@ -119,8 +119,7 @@ docker run -d -p 8000:8000 systemdeveloper868/capgemini
 
 **Para entrar en la aplicación por el navegador**
 
-http://20.8.153.32:8000/
-
+[http://20.8.153.32:8000/]
 
 #
 ### Tecnologías utilizadas 🛠️
