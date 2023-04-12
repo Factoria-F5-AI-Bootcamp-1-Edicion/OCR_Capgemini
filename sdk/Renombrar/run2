@@ -1,0 +1,14 @@
+#!/bin/bash
+
+path="modified_json/"
+
+for file in "${path}"*.jpg;
+do
+    filename=$(basename $file)
+    echo $file.labels.json
+    echo $filename.labels.json
+    cp parte_amistoso_0_0.jpg.labels.json ${file}.labels.json  &&
+    cat "${file}.labels.json" | sed -i "s/parte_amistoso_0_0.jpg/${filename}/g" ${file}.labels.json
+    cp parte_amistoso_0_0_1.jpg.ocr.json ${file}.ocr.json  &&
+    cat "${file}.ocr.json" | sed -i "s/parte_amistoso_0_0_1.jpg/${filename}/g" ${file}.ocr.json
+done

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Imagen</title>
+    <!-- Se agrega el archivo CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2? display=swap" rel="stylesheet"> 
+
+    <style>
+      body {
+        background-color: #f8f9fa;
+        background-image: url("https://github.com/Factoria-F5-AI-Bootcamp-1-Edicion/OCR_Capgemini/blob/dev/app_web/templates/OCR_de_partes_de_coches2.jpg?raw=true");
+        background-size: cover;
+      }
+      .card {
+        max-width: 600px;
+        margin: 0 auto;
+        margin-top: 50px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px #C1C1C1;
+      }
+      .card-title {
+        color: #FFA500;
+        font-weight: bold;
+        font-size: 2.5rem;
+        text-align: center;
+      }
+      .custom-file-input:focus ~ .custom-file-label {
+        border-color: #3E8E41;
+      }
+      .custom-file-label {
+        color: #495057;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+      }
+      .btn-primary:not(:disabled):not(.disabled):active {
+        background-color: #3E8E41;
+        border-color: #3E8E41;
+      }
+      .alert-danger {
+        background-color: #f8d7da;
+        color: #721c24;
+        border-color: #f5c6cb;
+        margin-bottom: 20px;
+        font-size: 1rem;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1 class="card-title">Subir Imagen</h1>
+        <form method="POST" enctype="multipart/form-data" action="{{ url_for('subir_imagen') }}">
+          <div class="custom-file mb-3">
+            <input type="file" class="custom-file-input" id="customFile" name="userfile" required>
+            <label class="custom-file-label" for="customFile">Seleccione un archivo...</label>
+          </div>
+          <div class="alert alert-danger d-none" id="alerta-archivo">
+            Debe seleccionar un archivo para analizar.
+          </div>
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-outline-primary mr-3">Analizar</button>
+            <button type="reset" class="btn btn-outline-secondary">Limpiar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Agrega los archivos JS de Bootstrap al final del cuerpo del documento -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+      function validarFormulario() {
+        var archivo = document.getElementById("customFile").value;
+        if (!archivo) {
+          document.getElementById("alerta-archivo").classList.remove("d-none");
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
+
+

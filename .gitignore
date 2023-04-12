@@ -3,8 +3,13 @@
 
 #Exception files
 .idea
+<<<<<<< HEAD
 /API/Images
 Prueba/Renombrar/Dataset
+=======
+/app_web/Images
+sdk/Renombrar/Dataset
+>>>>>>> dev
 
 #Python
 # Byte-compiled / optimized / DLL files
@@ -159,7 +164,13 @@ poetry.toml
 # LSP config files
 pyrightconfig.json
 
+<<<<<<< HEAD
 
 # JSON archives
 .json
+=======
+# json archives
+*.json
+
+>>>>>>> dev
 

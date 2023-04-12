@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Resultados</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<link href="https://fonts.googleapis.com/css2? display=swap" rel="stylesheet">
+
+	<style>
+		body {
+			background-color: #f4f4f4;
+			font-family: Arial, sans-serif;
+			background-image: url("https://github.com/Factoria-F5-AI-Bootcamp-1-Edicion/OCR_Capgemini/blob/dev/app_web/templates/fondo_2.jpg?raw=true");
+        background-size: cover;
+		}
+
+		.container {
+			width: 60%;
+			margin: 0 auto;
+			margin-top: 20px;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0px 0px 10px #ccc;
+			border-radius: 5px;
+			text-align: center;
+		}
+		h1 {
+			text-align: center;
+			font-size: 60px;
+			margin-top: 40px;
+			color: #FFA500;
+			background: #0070ae ;
+		}
+		h2 {
+			font-size: 36px;
+			margin-top: 0;
+			color: #333;
+		}
+
+		.json {
+			text-align: left;
+			overflow: auto;
+			height: 400px;
+			margin-top: 20px;
+			background-color: #eee;
+			padding: 20px;
+			border-radius: 5px;
+		}
+
+		.btn {
+			display: inline-block;
+			background-color: #FFA500;
+			color: #fff;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			font-size: 16px;
+			border-radius: 5px;
+			margin-top: 20px;
+			transition: background-color 0.3s ease;
+		}
+
+		.btn:hover {
+			background-color: #FFA500;
+		}
+	</style>
+</head>
+<body>
+	<h1>OCR : Form Recognizer</h1>
+	<div class="container">
+		<h2>Resultados del análisis de imagen</h2>
+
+		<div class="json">
+			<pre>{{ json_data }}</pre>
+		</div>
+
+		<form action="{{ url_for('download') }}" method="post">
+			<input type="hidden" name="json_str" value="{{ json_data }}">
+			<input type="text" name="nombre_archivo" placeholder="Nombre del archivo">
+			<input type="submit" class="btn" value="Descargar JSON">
+		</form>
+	</div>
+</body>
+</html>
+
+
