@@ -143,7 +143,7 @@ Esta aplicación ha sido desarrollada utilizando las siguientes tecnologías:
     - CSS
     - Bootstrap
 - **Metodología SCRUM:**
-    - [Trello]()
+    - [Trello](https://trello.com/invite/b/Rz1msFgX/ATTIf42a43f957186c8e6f6e2e59856bbb911DAD7F45/capgemini-ocr) 
 - **Presentación:**
     - [Canva](https://www.canva.com/design/DAFfufaJU2M/tCnzZKI7jdO_yXRh2_rQCA/edit)
 - **Documentación:**
