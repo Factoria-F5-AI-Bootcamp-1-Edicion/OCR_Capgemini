@@ -119,7 +119,8 @@ docker run -d -p 8000:8000 systemdeveloper868/capgemini
 
 **Para entrar en la aplicación por el navegador**
 
-[http://20.8.201.32:8000/]
+http://20.8.201.32:8000/
+
 
 #
 ### Tecnologías utilizadas 🛠️
@@ -141,10 +142,12 @@ Esta aplicación ha sido desarrollada utilizando las siguientes tecnologías:
     - HTML
     - CSS
     - Bootstrap
+- **Metodología SCRUM:**
+    - [Trello](https://trello.com/invite/b/Rz1msFgX/ATTIf42a43f957186c8e6f6e2e59856bbb911DAD7F45/capgemini-ocr) 
 - **Presentación:**
-    - Canva
+    - [Canva](https://www.canva.com/design/DAFfufaJU2M/tCnzZKI7jdO_yXRh2_rQCA/edit)
 - **Documentación:**
-    - [Notion](https://www.notion.so/Form-Recognizer-de-Azure-d5471258810042f788b24509ddba715f?pvs=4)
+    - [Notion](https://carpal-pyramid-f1c.notion.site/Form-Recognizer-de-Azure-)
 
 #
 ### Contribuciones 📁
