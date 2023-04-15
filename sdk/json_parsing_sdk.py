@@ -61,9 +61,9 @@ def function_json_parsing(datos):
     diccionario_final = plantilla
     # Filtramos y limpiamos los datos json entregados
     lista_diccionario = guardar_datos(datos)
-    # Actualizamos el json filtrado y limpio a la nueva plantilla para que se visualice de manera bonita
+    # Mapeamos el json filtrado y limpio a la nueva plantilla para que se visualice de manera bonita
     actualizar_diccionario(diccionario_final, lista_diccionario, mapeo)
-    #Actualizamos las claves para que se distingan visualmente de los valores
+    # Actualizamos las claves para que se distingan visualmente de los valores
     diccionario_final = update_keys(diccionario_final)
 
 
